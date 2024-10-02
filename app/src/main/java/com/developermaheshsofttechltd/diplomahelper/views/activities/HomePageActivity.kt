@@ -1,0 +1,193 @@
+package com.developermaheshsofttechltd.diplomahelper.views.activities
+
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.os.Bundle
+import androidx.core.content.pm.PackageInfoCompat
+import androidx.fragment.app.Fragment
+import com.developermaheshsofttechltd.diplomahelper.R
+import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityHomePageBinding
+import com.developermaheshsofttechltd.diplomahelper.models.BranchesModel
+import com.developermaheshsofttechltd.diplomahelper.views.adapter.NavigationAdapter
+import com.developermaheshsofttechltd.diplomahelper.views.adapter.VpnInternetAdapter
+import com.developermaheshsofttechltd.diplomahelper.views.fragment.HomeFragment
+import com.developermaheshsofttechltd.diplomahelper.views.fragment.ProfileFragment
+import com.developermaheshsofttechltd.diplomahelper.views.fragment.SearchFragment
+import com.developermaheshsofttechltd.diplomahelper.views.fragment.VideoFragment
+
+class HomePageActivity : VpnInternetAdapter() {
+
+    private val binding: ActivityHomePageBinding by lazy(LazyThreadSafetyMode.NONE) {
+        ActivityHomePageBinding.inflate(layoutInflater)
+    }
+    private val list = ArrayList<BranchesModel>()
+    private val navItemTitleList = listOf(
+        "Home", "Admin Login", "Latest Updates", "Download Papers", "Syllabus",
+        "MSBTE", "Hall Ticket", "Time Table", "Result", "Share App",
+        "Feedback", "Rate us", "About", "Logout"
+    )
+    private val navItemImageList = listOf(
+        R.drawable.home_icon, R.drawable.home_icon, R.drawable.home_icon,
+        R.drawable.home_icon, R.drawable.home_icon, R.drawable.home_icon,
+        R.drawable.home_icon, R.drawable.home_icon, R.drawable.home_icon,
+        R.drawable.home_icon, R.drawable.home_icon, R.drawable.home_icon,
+        R.drawable.home_icon, R.drawable.home_icon
+    )
+
+    @SuppressLint("SetTextI18n")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
+        replaceFragment(HomeFragment())
+
+        binding.appbarlayout.toolBar.setNavigationOnClickListener {
+            binding.drawerLayout.open()
+        }
+
+        list.clear()
+        navItemTitleList.forEachIndexed { index, title ->
+            list.add(BranchesModel(navItemImageList[index].toString(), title))
+        }
+
+        binding.navView.navRecyclerView.adapter = NavigationAdapter(this, list)
+        binding.navView.tvVersionCode.text = "Version: ${
+            PackageInfoCompat.getLongVersionCode(
+                packageManager.getPackageInfo(packageName, 0)
+            )
+        }.0"
+
+        binding.chipNavigationBar.setItemSelected(R.id.menu_home, true)
+        binding.chipNavigationBar.setOnItemSelectedListener {
+            when (it) {
+                R.id.menu_home -> replaceFragment(HomeFragment())
+                R.id.menu_profile -> replaceFragment(ProfileFragment())
+                R.id.menu_search -> replaceFragment(SearchFragment())
+                R.id.menu_video -> replaceFragment(VideoFragment())
+                else -> replaceFragment(HomeFragment())
+            }
+        }
+
+        binding.appbarlayout.toolBar.setOnMenuItemClickListener { item ->
+            if (item.itemId == R.id.menu_notification) {
+                startActivity(Intent(this, NotificationActivity::class.java))
+                true
+            } else {
+                false
+            }
+        }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.activity_home_page_frame_layout, fragment)
+            .commitNow()
+    }
+}
+
+
+//package com.developermaheshsofttechltd.diplomahelper.views.activities
+//
+//import android.os.Bundle
+//import android.view.View
+//import androidx.appcompat.app.AppCompatActivity
+//import com.developermaheshsofttechltd.diplomahelper.R
+//import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityHomePageBinding
+//import com.developermaheshsofttechltd.diplomahelper.models.BranchesModel
+//import com.developermaheshsofttechltd.diplomahelper.utils.FragmentUtils.Companion.loadFragment
+//import com.developermaheshsofttechltd.diplomahelper.views.fragment.HomeFragment
+//import com.developermaheshsofttechltd.diplomahelper.views.fragment.ProfileFragment
+//import com.developermaheshsofttechltd.diplomahelper.views.fragment.SearchFragment
+//import com.developermaheshsofttechltd.diplomahelper.views.fragment.VideoFragment
+//
+//class HomePageActivity : AppCompatActivity() {
+//
+//    private val activity = this
+//    private val list = ArrayList<BranchesModel>()
+//    private val navItemTitleList = listOf(
+//        "Home",
+//        "Admin Login",
+//        "Latest Updates",
+//        "Download Papers",
+//        "Syllabus",
+//        "MSBTE",
+//        "Hall Ticket",
+//        "Time Table",
+//        "Result",
+//        "Share App",
+//        "Feedback",
+//        "Rate us",
+//        "About",
+//        "Logout"
+//    )
+//
+//    private val binding by lazy { ActivityHomePageBinding.inflate(layoutInflater) }
+//
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContentView(binding.root)
+//        loadFragment(HomeFragment(), activity)
+//        showToolBar()
+//
+//
+//        binding.apply {
+//
+//            appbarlayout.toolBar.setNavigationOnClickListener {
+//                drawerLayout.open()
+//            }
+//
+//
+//            chipNavigationBar.setItemSelected(R.id.menu_home, true)
+//            chipNavigationBar.setOnItemSelectedListener { it ->
+//                when (it) {
+//                    R.id.menu_home -> {
+//                        loadFragment(HomeFragment(), activity)
+//                        showToolBar()
+//                    }
+//
+//                    R.id.menu_search -> {
+//                        loadFragment(SearchFragment(), activity)
+//                        hideToolBar()
+//                    }
+//
+//                    R.id.menu_video -> {
+//                        loadFragment(VideoFragment(), activity)
+//                        hideToolBar()
+//                    }
+//
+//                    R.id.menu_profile -> {
+//                        loadFragment(ProfileFragment(), activity)
+//                        showToolBar()
+//                    }
+//
+//                }
+//
+//                appbarlayout.toolBar.setOnMenuItemClickListener {
+//
+//                    when (it.itemId) {
+//                        R.id.menu_notification -> {
+////                            checkNotification(activity)
+//                        }
+//                    }
+//                    return@setOnMenuItemClickListener true
+//                }
+//
+//
+//            }
+//        }
+//
+//
+//    }
+//
+//
+//    private fun hideToolBar() {
+//        binding.appbarlayout.toolBar.visibility = View.GONE
+//
+//    }
+//
+//    private fun showToolBar() {
+//        binding.appbarlayout.toolBar.visibility = View.VISIBLE
+//    }
+//
+//}

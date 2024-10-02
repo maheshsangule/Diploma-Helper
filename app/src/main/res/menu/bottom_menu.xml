@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_home"
+        android:color="@color/yellow"
+        android:icon="@drawable/home_icon"
+        android:title="Home"
+        app:cnb_iconColor="@color/yellow" />
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/search_icon"
+        android:title="Search"
+        app:cnb_iconColor="@color/yellow" />
+    <item
+        android:id="@+id/menu_video"
+        android:icon="@drawable/video_icon"
+        android:title="Videos"
+        app:cnb_iconColor="@color/yellow" />
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/person_icon"
+        android:title="Profile"
+        app:cnb_iconColor="@color/yellow" />
+</menu>

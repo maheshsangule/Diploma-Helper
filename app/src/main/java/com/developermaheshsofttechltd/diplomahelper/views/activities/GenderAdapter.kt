@@ -1,0 +1,3 @@
+package com.developermaheshsofttechltd.diplomahelper.views.activities
+
+class GenderAdapter

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="@color/secondary_color">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:scrollbars="none"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/logo"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/inputenrolmentno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/input_bg"
+                android:digits="1234567890"
+                android:drawableStart="@drawable/person_icon"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:hint="Enrollment No."
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxEms="10"
+                android:maxLines="1"
+                android:paddingStart="15dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="16sp"
+                tools:ignore="RtlCompat" />
+
+            <WebView
+                android:id="@+id/webview"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:scrollbars="none" />
+
+            <EditText
+                android:id="@+id/inputcaption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/input_bg"
+                android:drawableStart="@drawable/person_icon"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:ems="10"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:hint="Enter Above Captcha"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="15dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="16sp"
+                tools:ignore="RtlCompat" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/searchbutton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/background_button"
+                android:backgroundTint="@color/colorPrimary"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="Search"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

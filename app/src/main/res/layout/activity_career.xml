@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout android:id="@+id/app_bar_layout" android:background="@drawable/top_background_whatsapp_join_group" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@+id/app_bar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:navigationIcon="@drawable/ic_back_24" app:title="Career" app:titleTextColor="#ffff"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout android:background="@drawable/background_2" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@+id/app_bar_layout">
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10dp">
+            <LinearLayout android:orientation="vertical" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="50dp">
+                <RelativeLayout android:background="@drawable/background_2" android:layout_width="match_parent" android:layout_height="90dp" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp" android:elevation="3dp" android:layout_marginHorizontal="5dp">
+                    <Button android:id="@+id/jobopobotn" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                    <ImageView android:id="@+id/sem_1_logo" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/career" android:layout_centerVertical="true" android:layout_marginStart="12dp"/>
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:layout_toRightOf="@+id/sem_1_logo" android:layout_centerVertical="true">
+                        <TextView android:textSize="18sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="Career Options"/>
+                        <TextView android:textSize="14sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="After Polytechnic Diploma"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_arrow_forward" android:layout_centerVertical="true" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+                <RelativeLayout android:background="@drawable/background_2" android:layout_width="match_parent" android:layout_height="90dp" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp" android:elevation="3dp" android:layout_marginHorizontal="5dp">
+                    <Button android:id="@+id/govtjobbotn" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                    <ImageView android:id="@+id/sem_2_logo" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/career" android:layout_centerVertical="true" android:layout_marginStart="12dp"/>
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:layout_toRightOf="@+id/sem_2_logo" android:layout_centerVertical="true">
+                        <TextView android:textSize="18sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="List of Courses"/>
+                        <TextView android:textSize="14sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="After Polytechnic"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_arrow_forward" android:layout_centerVertical="true" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+                <RelativeLayout android:background="@drawable/background_2" android:layout_width="match_parent" android:layout_height="90dp" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp" android:elevation="3dp" android:layout_marginHorizontal="5dp">
+                    <Button android:id="@+id/ListJobOptn" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                    <ImageView android:id="@+id/sem_36_logo" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/career" android:layout_centerVertical="true" android:layout_marginStart="12dp"/>
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:layout_toRightOf="@+id/sem_36_logo" android:layout_centerVertical="true">
+                        <TextView android:textSize="18sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="List of Job Options"/>
+                        <TextView android:textSize="14sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="Govt or private job"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_arrow_forward" android:layout_centerVertical="true" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+                <RelativeLayout android:background="@drawable/background_2" android:layout_width="match_parent" android:layout_height="90dp" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp" android:elevation="3dp" android:layout_marginHorizontal="5dp">
+                    <Button android:id="@+id/Assam_psu" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                    <ImageView android:id="@+id/sem_6_logo" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/career" android:layout_centerVertical="true" android:layout_marginStart="12dp"/>
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:layout_toRightOf="@+id/sem_6_logo" android:layout_centerVertical="true">
+                        <TextView android:textSize="18sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="Business Ideas"/>
+                        <TextView android:textSize="14sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="Become a Successful Businessman"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_arrow_forward" android:layout_centerVertical="true" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+                <RelativeLayout android:background="@drawable/background_2" android:layout_width="match_parent" android:layout_height="90dp" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp" android:elevation="3dp" android:layout_marginHorizontal="5dp">
+                    <Button android:id="@+id/prijobbotn" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                    <ImageView android:id="@+id/sem_7_logo" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/career" android:layout_centerVertical="true" android:layout_marginStart="12dp"/>
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:layout_toRightOf="@+id/sem_7_logo" android:layout_centerVertical="true">
+                        <TextView android:textSize="18sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="Top Private Sector"/>
+                        <TextView android:textSize="14sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="Hiring Polytechnic Holder"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_arrow_forward" android:layout_centerVertical="true" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+                <RelativeLayout android:background="@drawable/background_2" android:layout_width="match_parent" android:layout_height="90dp" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp" android:elevation="3dp" android:layout_marginHorizontal="5dp">
+                    <Button android:id="@+id/more_job_info" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                    <ImageView android:id="@+id/garment_logo" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/career" android:layout_centerVertical="true" android:layout_marginStart="12dp"/>
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:layout_toRightOf="@+id/garment_logo" android:layout_centerVertical="true">
+                        <TextView android:textSize="18sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="More Information"/>
+                        <TextView android:textSize="14sp" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="Related to Job "/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_arrow_forward" android:layout_centerVertical="true" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

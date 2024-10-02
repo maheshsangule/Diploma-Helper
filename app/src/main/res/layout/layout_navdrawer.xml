@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="5dp"
+    android:background="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
+        android:paddingStart="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/nav_drawer_background"
+            android:backgroundTint="@color/secondary_color"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/activity_home_page_cl_nav_drawer_profile_name_username_arrow_background"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/nav_drawer_background_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/activity_home_page_iv_nav_drawer_arrow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_right_lightgray"
+                app:tint="@color/white" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/activity_home_page_iv_nav_user_profile"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:padding="5dp"
+                android:src="@drawable/user"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/circleImageView"
+                app:strokeColor="@color/white"
+                app:strokeWidth="3dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/activity_home_page_tv_nav_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/josefinsans_bold"
+                android:text="mahesh_sangule"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/activity_home_page_tv_nav_name"
+                app:layout_constraintStart_toStartOf="@+id/activity_home_page_tv_nav_name"
+                app:layout_constraintTop_toBottomOf="@+id/activity_home_page_tv_nav_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/activity_home_page_tv_nav_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/josefinsans_bold"
+                android:text="Mahesh Sangule"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/activity_home_page_iv_nav_drawer_arrow"
+                app:layout_constraintStart_toEndOf="@+id/activity_home_page_iv_nav_user_profile"
+                app:layout_constraintTop_toTopOf="@+id/activity_home_page_iv_nav_user_profile" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/trabgleBig"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:background="@drawable/triangle"
+            android:scaleX="-1"
+            android:scaleY="-1"
+            app:color="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/activity_home_page_cl_nav_drawer_profile_name_username_arrow_background"
+            app:layout_constraintStart_toEndOf="@+id/ll"
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_page_cl_nav_drawer_profile_name_username_arrow_background" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:background="@drawable/triangle"
+            android:scaleY="-1"
+            app:color="@color/yellow"
+            app:layout_constraintEnd_toStartOf="@+id/ll"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_page_cl_nav_drawer_profile_name_username_arrow_background" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/navRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            tools:listitem="@layout/item_nav_drawer"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@+id/ll"
+            app:layout_constraintEnd_toEndOf="@+id/ll"
+            app:layout_constraintStart_toStartOf="@+id/ll"
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_page_cl_nav_drawer_profile_name_username_arrow_background" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvVersionCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_vertical|center_horizontal|center"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/josefinsans_bold"
+            android:text="Version:2.0 "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ll"
+            app:layout_constraintEnd_toEndOf="@+id/navRecyclerView"
+            app:layout_constraintStart_toStartOf="@+id/navRecyclerView"
+            app:layout_constraintTop_toBottomOf="@+id/navRecyclerView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

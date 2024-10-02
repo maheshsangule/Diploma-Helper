@@ -1,0 +1,3 @@
+package com.developermaheshsofttechltd.diplomahelper.views.adapter
+
+class ChatRoomAdapter
