@@ -1,5 +1,6 @@
 package com.developermaheshsofttechltd.diplomahelper.quiz
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -18,6 +19,8 @@ import androidx.core.content.ContextCompat
 import com.developermaheshsofttechltd.diplomahelper.R
 import com.developermaheshsofttechltd.diplomahelper.constants.Constants
 import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityQuestionQuizBinding
+import com.developermaheshsofttechltd.diplomahelper.databinding.QuizOnbackBinding
+import com.developermaheshsofttechltd.diplomahelper.utils.SharedPrefUtils
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class QuizQuestionActivity : AppCompatActivity() {
@@ -25,18 +28,23 @@ class QuizQuestionActivity : AppCompatActivity() {
     private lateinit var questionList: ArrayList<QuizResult>
     private var position = 0
     private var allowPlaying = true
-    var isNext=false
+    var isNext = false
     private val resultList = ArrayList<ResultModel>()
     private var score = 0
+    private val activity = this
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuestionQuizBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+        SharedPrefUtils.init(activity)
         val sharedPreferences = getSharedPreferences("userData", Context.MODE_PRIVATE)
 
 //        Glide.with(this).load(sharedPreferences.getString("imageUrl", "")).into(binding!!.profilePic);
-        binding!!.tvCatTitle.text = sharedPreferences.getString("title", "").toString()
-        binding!!.categoryImageQuiz.setImageResource(sharedPreferences.getInt("image",0).toInt())
+//        binding!!.tvCatTitle.text = sharedPreferences.getString("title", "").toString()
+//        binding!!.categoryImageQuiz.setImageResource(sharedPreferences.getInt("image", 0).toInt())
+        binding!!.tvCatTitle.text = SharedPrefUtils.getPrefString("title", "").toString()
+        binding!!.categoryImageQuiz.setImageResource(SharedPrefUtils.getPrefInt("image", 0).toInt())
 
 //        val pref =getSharedPreferences("userCoin", Context.MODE_PRIVATE)
 
@@ -49,22 +57,21 @@ class QuizQuestionActivity : AppCompatActivity() {
         setOptions()
 //        binding?.tvProgress?.text = "1/${questionList.size}"
         binding?.btnNext?.setOnClickListener {
-            if(isNext)
-            {
+            if (isNext) {
                 onNext()
-                isNext=false
-            }
-            else
-            {
-                Toast.makeText(this,"Please select option",Toast.LENGTH_SHORT).show()
+                isNext = false
+            } else {
+                Toast.makeText(this, "Please select option", Toast.LENGTH_SHORT).show()
             }
 
         }
         val redBg = ContextCompat.getDrawable(this, R.drawable.red_button_bg)
+        val backTint = ContextCompat.getColorStateList(this, R.color.red)
         val optionClickListener = OnClickListener { view ->
             if (allowPlaying) {
-                 isNext = true
+                isNext = true
                 view.background = redBg
+                view.backgroundTintList=backTint
                 showCorrectAnswer()
                 setScore(view as Button?)
                 allowPlaying = false
@@ -107,7 +114,7 @@ class QuizQuestionActivity : AppCompatActivity() {
             binding!!.btnNext.setText("Submit")
         }
         if (count < 10) {
-            binding!!.tvCurrentQuestion.setText("0"+count.toString())
+            binding!!.tvCurrentQuestion.setText("0" + count.toString())
         } else {
             binding!!.tvCurrentQuestion.setText(count.toString())
         }
@@ -142,20 +149,47 @@ class QuizQuestionActivity : AppCompatActivity() {
 
     private fun showCorrectAnswer() {
         val blueBg = ContextCompat.getDrawable(this, R.drawable.blue_button_bg)
-        when (true) {
-            (correctAnswer == optionList[0]) -> binding?.option1?.background = blueBg
-            (correctAnswer == optionList[1]) -> binding?.option2?.background = blueBg
-            (correctAnswer == optionList[2]) -> binding?.option3?.background = blueBg
-            else -> binding?.option4?.background = blueBg
+        val backTint = ContextCompat.getColorStateList(this, R.color.green)
+        binding!!.apply {
+            when (true) {
+                (correctAnswer == optionList[0]) -> {
+                    option1.background = blueBg
+                    option1.backgroundTintList = backTint
+
+                }
+
+                (correctAnswer == optionList[1]) -> {
+                    option2.background = blueBg
+                    option2.backgroundTintList = backTint
+                }
+
+                (correctAnswer == optionList[2]) -> {
+                    option3.background = blueBg
+                    option3.backgroundTintList = backTint
+                }
+
+                else -> {
+                    option4.background = blueBg
+                    option4.backgroundTintList = backTint
+
+                }
+            }
         }
+
     }
 
     private fun resetButtonBackground() {
         val grayBg = ContextCompat.getDrawable(this, R.drawable.gray_button_bg)
+        val backTint = ContextCompat.getColorStateList(this, R.color.colorPrimary)
         binding?.option1?.background = grayBg
         binding?.option2?.background = grayBg
         binding?.option3?.background = grayBg
         binding?.option4?.background = grayBg
+
+        binding?.option1?.backgroundTintList = backTint
+        binding?.option2?.backgroundTintList = backTint
+        binding?.option3?.backgroundTintList = backTint
+        binding?.option4?.backgroundTintList = backTint
     }
 
 
@@ -166,12 +200,14 @@ class QuizQuestionActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+
     val callback = this.onBackPressedDispatcher.addCallback(this) {
         quitQuiz(this@QuizQuestionActivity, "")
 
     }
 
 
+    @SuppressLint("SetTextI18n")
     private fun quitQuiz(context: Activity, s: String) {
         val sheetDialog: BottomSheetDialog?
         sheetDialog = BottomSheetDialog(context, R.style.BottomSheetStyle)
@@ -181,28 +217,32 @@ class QuizQuestionActivity : AppCompatActivity() {
             context.findViewById<View>(R.id.quiz_onback) as LinearLayout?
         )
 
-        val btn_quit = view.findViewById<AppCompatButton>(R.id.btn_quit)
-        val btn_continue = view.findViewById<AppCompatButton>(R.id.btn_continue)
-        val tv_text = view.findViewById<TextView>(R.id.tv_text)
+        val btnQuit = view.findViewById<AppCompatButton>(R.id.btn_quit)
+        val btnContinue = view.findViewById<AppCompatButton>(R.id.btn_continue)
+        val tvText = view.findViewById<TextView>(R.id.tv_text)
+
+//        val binding=QuizOnbackBinding.inflate(layoutInflater)
+
 
         if (s == "home") {
-            tv_text.setText("Are you sure want to Exit App?")
-            btn_quit.setText("Yes")
-            btn_continue.setText("No")
-            btn_quit.setOnClickListener {
+
+            tvText.text = "Are you sure want to Exit App?"
+            btnQuit.text = "Yes"
+            btnContinue.text = "No"
+            btnQuit.setOnClickListener {
                 context.finish()
             }
-            btn_continue.setOnClickListener {
+            btnContinue.setOnClickListener {
                 sheetDialog.dismiss()
             }
         } else {
-            tv_text.setText("Are you sure want to Quit quiz?")
-            btn_quit.setText("Quit")
-            btn_continue.setText("Continue")
-            btn_quit.setOnClickListener {
+            tvText.text = "Are you sure want to Quit quiz?"
+            btnQuit.text = "Quit"
+            btnContinue.text = "Continue"
+            btnQuit.setOnClickListener {
                 context.finish()
             }
-            btn_continue.setOnClickListener {
+            btnContinue.setOnClickListener {
                 sheetDialog.dismiss()
             }
         }

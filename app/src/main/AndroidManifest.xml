@@ -12,6 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiplomaHelper"
         tools:targetApi="31">
+
+
+        <activity
+            android:name=".quiz.QuizResultActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".quiz.QuizQuestionActivity"
+            android:exported="false" />
+
         <activity
             android:name=".quiz.QuizActivity"
             android:exported="true"

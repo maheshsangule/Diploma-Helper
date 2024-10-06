@@ -2,20 +2,21 @@ package com.developermaheshsofttechltd.diplomahelper.quiz
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.developermaheshsofttechltd.diplomahelper.databinding.CategoryItemBinding
+import com.developermaheshsofttechltd.diplomahelper.utils.SharedPrefUtils
 
 class GridAdapter(
-    private val sharedPreferences: SharedPreferences,
     private val context: Context,
     private val items: List<CategoryModel>,
     private val categoryStat: Map<String, CategoryStats>
 ) : RecyclerView.Adapter<GridAdapter.ViewHolder>() {
 
+
     private var onClickListener: OnClickListener? = null
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = CategoryItemBinding.inflate(
@@ -35,9 +36,15 @@ class GridAdapter(
 //        val count = categoryStat[item.id]?.total_num_of_questions
 //        holder.binding.categoryQuestion.text = "$count questions"
 
+
+        SharedPrefUtils.init(context)
         holder.binding.root.setOnClickListener {
             onClickListener?.onClick(item.id.toInt())
-            saveToSharedPreferences(item.image, holder.binding.categoryName.text.toString())
+
+            SharedPrefUtils.putPrefInt("image", item.image)
+            SharedPrefUtils.putPrefString("title", holder.binding.categoryName.text.toString())
+
+//            saveToSharedPreferences(item.image, holder.binding.categoryName.text.toString())
         }
     }
 
@@ -54,12 +61,16 @@ class GridAdapter(
         fun onClick(id: Int)
     }
 
-    private fun saveToSharedPreferences(imageResId: Int, text: String) {
-        val editor = sharedPreferences.edit()
-        editor.putInt("image", imageResId)
-        editor.putString("title", text)
-        editor.apply()
-    }
+//    private fun saveToSharedPreferences(imageResId: Int, text: String) {
+//
+//        SharedPrefUtils.putPrefInt("image", imageResId)
+//        SharedPrefUtils.putPrefString("title", text)
+//        val editor = sharedPreferences.edit()
+//        editor.putInt("image", imageResId)
+//        editor.putString("title", text)
+//        editor.apply()
+//
+//    }
 }
 
 

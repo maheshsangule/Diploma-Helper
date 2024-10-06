@@ -9,16 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.developermaheshsofttechltd.diplomahelper.R
 import com.developermaheshsofttechltd.diplomahelper.databinding.QuizResultBinding
 import com.developermaheshsofttechltd.diplomahelper.views.activities.Utils
-import com.google.firebase.Firebase
-import com.google.firebase.auth.auth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.database
 
 
 class QuizResultActivity : AppCompatActivity() {
-    var currentChance = 0L
+    //    var currentChance = 0L
     private val binding: QuizResultBinding by lazy {
         QuizResultBinding.inflate(layoutInflater)
     }
@@ -27,26 +21,11 @@ class QuizResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        var totalQuestion = intent.getStringExtra("totalquestion")!!.toInt() / 2
+        val totalQuestion = intent.getStringExtra("totalquestion")!!.toInt() / 2
         binding.btnRetakeQuiz.setOnClickListener {
             finish()
         }
-        Firebase.database.reference.child("PlayChance")
-            .child(Firebase.auth.currentUser!!.uid)
-            .addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
 
-                    if (snapshot.exists()) {
-                        currentChance = snapshot.value as Long
-                    }
-
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-
-                }
-            }
-            )
         binding.btnShare.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "text/plain"
@@ -64,16 +43,15 @@ class QuizResultActivity : AppCompatActivity() {
 
 
         if (intent.getStringExtra("score")?.toInt()!! > totalQuestion) {
-            if (intent.getStringExtra("score")?.toInt()!! > intent.getStringExtra("totalquestion")!!
-                    .toInt() - 1
+            if (intent.getStringExtra("score")?.toInt()!! > totalQuestion - 1
             ) {
                 binding.tvScore.text = intent.getStringExtra("score")
             } else {
                 binding.tvScore.text = "0" + intent.getStringExtra("score")
             }
-            Firebase.database.reference.child("PlayChance")
-                .child(Firebase.auth.currentUser!!.uid)
-                .setValue(currentChance + 1)
+//            Firebase.database.reference.child("PlayChance")
+//                .child(Firebase.auth.currentUser!!.uid)
+//                .setValue(currentChance + 1)
             binding.lavGreetingJson.visibility = View.VISIBLE
             binding.tvToatlQuestion.text = "/" + intent.getStringExtra("totalquestion")
             binding.ivImg.setImageResource(R.drawable.winner_icon2)

@@ -11,6 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="@drawable/quiz_background"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +27,7 @@
                 android:id="@+id/category_image_quiz"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:layout_weight="0"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="@+id/tvCatTitle"
@@ -41,13 +42,14 @@
                 android:gravity="center"
                 android:layout_height="50dp"
                 android:background="@drawable/background_button"
-                android:backgroundTint="@color/colorPrimary20"
                 android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+
                 android:fontFamily="@font/poppins_extrabold"
                 android:text="Category Name"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:visibility="visible"
 
 
@@ -62,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:weightSum="3"
+                android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="@+id/category_image_quiz"
                 app:layout_constraintStart_toStartOf="@+id/category_image_quiz"
                 app:layout_constraintTop_toBottomOf="@+id/category_image_quiz">
@@ -81,6 +84,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_bold"
                     android:letterSpacing="0.1"
+                    android:textColor="@color/black"
                     android:text="/"
                     android:textSize="20sp" />
 
@@ -92,6 +96,7 @@
                     android:letterSpacing="0.1"
                     android:text="15"
                     android:textSize="20sp"
+                    android:textColor="@color/black"
                     android:visibility="visible"
                     tools:ignore="InvalidId" />
 
@@ -107,6 +112,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:text="What is Your name"
                 android:textAlignment="center"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="@+id/textView14"
@@ -128,9 +134,10 @@
 
 
             <com.google.android.material.button.MaterialButton
+                app:backgroundTint="@color/primary_color"
                 android:id="@+id/option1"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
@@ -149,9 +156,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
             <com.google.android.material.button.MaterialButton
+                app:backgroundTint="@color/primary_color"
                 android:id="@+id/option2"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp"
@@ -172,7 +180,8 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/option3"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@color/primary_color"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp"
@@ -192,9 +201,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/option2" />
 
             <com.google.android.material.button.MaterialButton
+                app:backgroundTint="@color/primary_color"
                 android:id="@+id/option4"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp"
@@ -213,6 +223,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/option3" />
 
             <com.google.android.material.button.MaterialButton
+                app:backgroundTint="@color/primary_color"
                 android:id="@+id/btnNext"
                 android:layout_width="wrap_content"
 

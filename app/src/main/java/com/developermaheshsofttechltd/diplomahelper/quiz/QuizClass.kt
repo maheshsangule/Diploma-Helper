@@ -1,5 +1,6 @@
 package com.developermaheshsofttechltd.diplomahelper.quiz
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -23,7 +24,7 @@ class QuizClass(private val context: Context) {
         categoryItemList: ArrayList<CategoryModel>
     ) {
         if (Constants.isNetworkAvailable(context)) {
-            val pbDialog = Base.showProgressBar(context)
+            val pbDialog = Base.showProgressBar(context as Activity)
             val retrofit: Retrofit = Retrofit.Builder()
                 .baseUrl("https://opentdb.com/")
                 .addConverterFactory(GsonConverterFactory.create()).build()
@@ -44,8 +45,10 @@ class QuizClass(private val context: Context) {
                             val intent = Intent(context, QuizQuestionActivity::class.java)
                             intent.putExtra("questionList", questionList)
                             intent.putExtra("categoryItemList", categoryItemList)
-//                            intent.putExtra("image", image.image)
+//                            intent.putExtra("image", categoryItemList)
                             context.startActivity(intent)
+
+                            Log.d("VISHAY", "onResponse: $categoryItemList")
 
                         } else {
                             Base.showToast(
@@ -73,7 +76,7 @@ class QuizClass(private val context: Context) {
 
     fun setRecyclerView(recycleView: RecyclerView?) {
         if (Constants.isNetworkAvailable(context)) {
-            val pbDialog = Base.showProgressBar(context)
+            val pbDialog = Base.showProgressBar(context as Activity)
             val retrofit: Retrofit = Retrofit.Builder()
                 .baseUrl("https://opentdb.com/")
                 .addConverterFactory(GsonConverterFactory.create()).build()
@@ -89,9 +92,8 @@ class QuizClass(private val context: Context) {
                     if (response.isSuccessful) {
                         val questionStats: QuestionStats = response.body()!!
                         val categoryMap = questionStats.categories
-                        val sharedPreferences = context.getSharedPreferences("userData", Context.MODE_PRIVATE)
                         val adapter = GridAdapter(
-                            sharedPreferences,
+
                             context,
                             Constants.getCategoryItemList(),
                             categoryMap

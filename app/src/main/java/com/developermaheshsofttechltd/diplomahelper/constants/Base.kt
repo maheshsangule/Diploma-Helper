@@ -1,19 +1,39 @@
 package com.developermaheshsofttechltd.diplomahelper.constants
 
+import android.app.ActionBar
+import android.app.Activity
 import android.app.Dialog
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.widget.Toast
 import com.developermaheshsofttechltd.diplomahelper.R
+import com.developermaheshsofttechltd.diplomahelper.databinding.ProgressbarBinding
 
 
 object Base {
+    private lateinit var dialog: Dialog
+    fun showProgressBar(context: Activity): Dialog {
+        val dialogBinding = ProgressbarBinding.inflate(context.layoutInflater)
 
-    fun showProgressBar(context: Context): Dialog {
-        val dialogue = Dialog(context)
-        dialogue.setContentView(R.layout.progressbar)
-        dialogue.show()
+        dialog = Dialog(context).apply {
+            setCancelable(false)
+            setContentView(dialogBinding.root)
+            window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            window!!.setLayout(
+                ActionBar.LayoutParams.MATCH_PARENT,
+                ActionBar.LayoutParams.WRAP_CONTENT
+            )
+            show()
+        }
 
-        return dialogue
+
+//        dialogue.setContentView(R.layout.progressbar)
+//        context.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//
+//        dialogue.show()
+//
+        return dialog
     }
 
     fun showToast(context: Context, msg: String) {
