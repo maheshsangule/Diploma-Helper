@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,10 +9,15 @@
 
     >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
+
+        android:layout_height="0dp"
         android:background="@drawable/quiz_background"
-        android:layout_height="match_parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -39,13 +44,13 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvCatTitle"
                 android:layout_width="match_parent"
-                android:gravity="center"
                 android:layout_height="50dp"
-                android:background="@drawable/background_button"
                 android:layout_margin="8dp"
+                android:background="@drawable/background_button"
                 android:backgroundTint="@color/white"
-
                 android:fontFamily="@font/poppins_extrabold"
+
+                android:gravity="center"
                 android:text="Category Name"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -62,9 +67,9 @@
                 android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:gravity="center_horizontal"
                 android:weightSum="3"
-                android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="@+id/category_image_quiz"
                 app:layout_constraintStart_toStartOf="@+id/category_image_quiz"
                 app:layout_constraintTop_toBottomOf="@+id/category_image_quiz">
@@ -84,8 +89,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_bold"
                     android:letterSpacing="0.1"
-                    android:textColor="@color/black"
                     android:text="/"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -95,8 +100,8 @@
                     android:fontFamily="@font/poppins_bold"
                     android:letterSpacing="0.1"
                     android:text="15"
-                    android:textSize="20sp"
                     android:textColor="@color/black"
+                    android:textSize="20sp"
                     android:visibility="visible"
                     tools:ignore="InvalidId" />
 
@@ -134,7 +139,6 @@
 
 
             <com.google.android.material.button.MaterialButton
-                app:backgroundTint="@color/primary_color"
                 android:id="@+id/option1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -146,17 +150,17 @@
                 android:gravity="center"
                 android:text="Options"
                 android:textAllCaps="false"
+                android:textColor="@color/black"
 
-                android:textColor="@color/gray"
                 android:textSize="16sp"
                 android:visibility="visible"
+                app:backgroundTint="@color/gray"
                 app:cornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/textView16"
                 app:layout_constraintStart_toStartOf="@+id/textView16"
                 app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
             <com.google.android.material.button.MaterialButton
-                app:backgroundTint="@color/primary_color"
                 android:id="@+id/option2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -168,10 +172,11 @@
                 android:gravity="center"
                 android:text="Options"
                 android:textAllCaps="false"
+                android:textColor="@color/black"
 
-                android:textColor="@color/gray"
                 android:textSize="16sp"
                 android:visibility="visible"
+                app:backgroundTint="@color/gray"
                 app:cornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/option1"
                 app:layout_constraintStart_toStartOf="@+id/option1"
@@ -181,27 +186,26 @@
                 android:id="@+id/option3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:backgroundTint="@color/primary_color"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp"
-
                 android:background="@drawable/background_button"
+
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
                 android:text="Options"
                 android:textAllCaps="false"
+                android:textColor="@color/black"
 
-                android:textColor="@color/gray"
                 android:textSize="16sp"
                 android:visibility="visible"
+                app:backgroundTint="@color/gray"
                 app:cornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/option2"
                 app:layout_constraintStart_toStartOf="@+id/option2"
                 app:layout_constraintTop_toBottomOf="@+id/option2" />
 
             <com.google.android.material.button.MaterialButton
-                app:backgroundTint="@color/primary_color"
                 android:id="@+id/option4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -213,20 +217,19 @@
                 android:gravity="center"
                 android:text="Options"
                 android:textAllCaps="false"
+                android:textColor="@color/black"
 
-                android:textColor="@color/gray"
                 android:textSize="16sp"
                 android:visibility="visible"
+                app:backgroundTint="@color/gray"
                 app:cornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/option3"
                 app:layout_constraintStart_toStartOf="@+id/option3"
                 app:layout_constraintTop_toBottomOf="@+id/option3" />
 
             <com.google.android.material.button.MaterialButton
-                app:backgroundTint="@color/primary_color"
                 android:id="@+id/btnNext"
                 android:layout_width="wrap_content"
-
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="15dp"
@@ -242,7 +245,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-
+                app:backgroundTint="@color/colorPrimary"
                 app:cornerRadius="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/option4"
@@ -250,71 +253,99 @@
                 app:layout_constraintStart_toStartOf="@+id/option4"
                 app:layout_constraintTop_toBottomOf="@+id/option4"
                 app:layout_constraintVertical_bias="0.0" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
-            android:id="@+id/ll_winner"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
 
-            android:visibility="gone">
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/ll_winner"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:gravity="center"-->
+        <!--            android:orientation="vertical"-->
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/animation_winner"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_gravity="center"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/winner_icon" />
+        <!--            android:visibility="gone">-->
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/re54"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="50dp"
-                android:fontFamily="@font/poppins_extrabold"
-                android:gravity="center"
-                android:text="You Won a Chance to Play"
-                android:textSize="28sp" />
-        </LinearLayout>
+        <!--            <com.airbnb.lottie.LottieAnimationView-->
+        <!--                android:id="@+id/animation_winner"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="250dp"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                app:lottie_autoPlay="true"-->
+        <!--                app:lottie_loop="true"-->
+        <!--                app:lottie_rawRes="@raw/winner_icon" />-->
 
-        <LinearLayout
-            android:id="@+id/ll_sorry"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <!--            <com.google.android.material.textview.MaterialTextView-->
+        <!--                android:id="@+id/re54"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="40dp"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:layout_marginBottom="50dp"-->
+        <!--                android:fontFamily="@font/poppins_extrabold"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text="You Won a Chance to Play"-->
+        <!--                android:textSize="28sp" />-->
+        <!--        </LinearLayout>-->
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/animation_sorry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/sorry_icon" />
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/ll_sorry"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:background="@color/white"-->
+        <!--            android:gravity="center"-->
+        <!--            android:orientation="vertical"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="1.0"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent">-->
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/re"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_extrabold"
-                android:gravity="center"
-                android:text="Sorry You Have Lost"
-                android:textSize="28sp" />
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--            <com.airbnb.lottie.LottieAnimationView-->
+        <!--                android:id="@+id/animation_sorry"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                app:lottie_autoPlay="true"-->
+        <!--                app:lottie_loop="true"-->
+        <!--                app:lottie_rawRes="@raw/sorry_icon" />-->
+
+        <!--            <com.google.android.material.textview.MaterialTextView-->
+        <!--                android:id="@+id/re"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="40dp"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:fontFamily="@font/poppins_extrabold"-->
+        <!--                android:gravity="center"-->
+        <!--                android:text="Sorry You Have Lost"-->
+        <!--                android:textSize="28sp" />-->
+        <!--        </LinearLayout>-->
+    </ScrollView>
 
 
-</ScrollView>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/mtvNoOptionSelected"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/background_button"
+        android:drawableEnd="@drawable/ic_cancel"
+        android:drawableTint="@color/gray"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:paddingEnd="10dp"
+        android:text="Please select option"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:backgroundTint="@color/red"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

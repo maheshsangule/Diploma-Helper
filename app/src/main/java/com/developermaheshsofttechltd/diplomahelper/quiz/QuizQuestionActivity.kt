@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
@@ -19,7 +20,6 @@ import androidx.core.content.ContextCompat
 import com.developermaheshsofttechltd.diplomahelper.R
 import com.developermaheshsofttechltd.diplomahelper.constants.Constants
 import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityQuestionQuizBinding
-import com.developermaheshsofttechltd.diplomahelper.databinding.QuizOnbackBinding
 import com.developermaheshsofttechltd.diplomahelper.utils.SharedPrefUtils
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
@@ -33,12 +33,32 @@ class QuizQuestionActivity : AppCompatActivity() {
     private var score = 0
     private val activity = this
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuestionQuizBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         SharedPrefUtils.init(activity)
-        val sharedPreferences = getSharedPreferences("userData", Context.MODE_PRIVATE)
+
+//        binding?.apply {
+//
+//            mtvNoOptionSelected.setOnTouchListener { v, event ->
+//                if (event.action == MotionEvent.ACTION_UP) {
+//                    val drawableEnd = mtvNoOptionSelected.compoundDrawables[2] // Right drawable
+//                    if (drawableEnd != null) {
+//                        // Check if the touch event is within the bounds of the drawableEnd
+//                        if (event.rawX >= (mtvNoOptionSelected.right - drawableEnd.bounds.width())) {
+//                            // Handle drawableEnd click (like your cancel icon)
+//                            Toast.makeText(activity, "Drawable End clicked", Toast.LENGTH_SHORT)
+//                                .show()
+//                            mtvNoOptionSelected.visibility = View.GONE
+//                            return@setOnTouchListener true
+//                        }
+//                    }
+//                }
+//                return@setOnTouchListener false
+//            }
+//        }
 
 //        Glide.with(this).load(sharedPreferences.getString("imageUrl", "")).into(binding!!.profilePic);
 //        binding!!.tvCatTitle.text = sharedPreferences.getString("title", "").toString()
@@ -60,8 +80,10 @@ class QuizQuestionActivity : AppCompatActivity() {
             if (isNext) {
                 onNext()
                 isNext = false
+                binding!!.mtvNoOptionSelected.visibility = View.GONE
             } else {
-                Toast.makeText(this, "Please select option", Toast.LENGTH_SHORT).show()
+                binding!!.mtvNoOptionSelected.visibility = View.VISIBLE
+//                Toast.makeText(this, "Please select option", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -180,7 +202,7 @@ class QuizQuestionActivity : AppCompatActivity() {
 
     private fun resetButtonBackground() {
         val grayBg = ContextCompat.getDrawable(this, R.drawable.gray_button_bg)
-        val backTint = ContextCompat.getColorStateList(this, R.color.colorPrimary)
+        val backTint = ContextCompat.getColorStateList(this, R.color.gray)
         binding?.option1?.background = grayBg
         binding?.option2?.background = grayBg
         binding?.option3?.background = grayBg
@@ -211,7 +233,7 @@ class QuizQuestionActivity : AppCompatActivity() {
     private fun quitQuiz(context: Activity, s: String) {
         val sheetDialog: BottomSheetDialog?
         sheetDialog = BottomSheetDialog(context, R.style.BottomSheetStyle)
-        val inflater: LayoutInflater = context.getLayoutInflater()
+        val inflater: LayoutInflater = context.layoutInflater
         val view: View = inflater.inflate(
             R.layout.quiz_onback,
             context.findViewById<View>(R.id.quiz_onback) as LinearLayout?

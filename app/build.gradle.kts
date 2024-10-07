@@ -84,6 +84,8 @@ dependencies {
     implementation("org.asynchttpclient:async-http-client:3.0.0")
     implementation("com.codepath.libraries:asynchttpclient:2.2.0")
 
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
+
     implementation(libs.github.imageslideshow)
 
     // Testing
