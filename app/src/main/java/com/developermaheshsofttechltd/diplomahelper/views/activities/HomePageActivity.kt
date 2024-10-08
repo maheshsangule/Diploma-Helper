@@ -3,19 +3,20 @@ package com.developermaheshsofttechltd.diplomahelper.views.activities
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.pm.PackageInfoCompat
 import androidx.fragment.app.Fragment
 import com.developermaheshsofttechltd.diplomahelper.R
 import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityHomePageBinding
 import com.developermaheshsofttechltd.diplomahelper.models.BranchesModel
+import com.developermaheshsofttechltd.diplomahelper.utils.FragmentUtils.Companion.loadFragment
 import com.developermaheshsofttechltd.diplomahelper.views.adapter.NavigationAdapter
-import com.developermaheshsofttechltd.diplomahelper.views.adapter.VpnInternetAdapter
 import com.developermaheshsofttechltd.diplomahelper.views.fragment.HomeFragment
 import com.developermaheshsofttechltd.diplomahelper.views.fragment.ProfileFragment
 import com.developermaheshsofttechltd.diplomahelper.views.fragment.SearchFragment
 import com.developermaheshsofttechltd.diplomahelper.views.fragment.VideoFragment
 
-class HomePageActivity : VpnInternetAdapter() {
+class HomePageActivity : AppCompatActivity() {
 
     private val binding: ActivityHomePageBinding by lazy(LazyThreadSafetyMode.NONE) {
         ActivityHomePageBinding.inflate(layoutInflater)
@@ -26,6 +27,8 @@ class HomePageActivity : VpnInternetAdapter() {
         "MSBTE", "Hall Ticket", "Time Table", "Result", "Share App",
         "Feedback", "Rate us", "About", "Logout"
     )
+
+    private val activity = this
     private val navItemImageList = listOf(
         R.drawable.home_icon, R.drawable.home_icon, R.drawable.home_icon,
         R.drawable.home_icon, R.drawable.home_icon, R.drawable.home_icon,
@@ -39,7 +42,7 @@ class HomePageActivity : VpnInternetAdapter() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        replaceFragment(HomeFragment())
+        loadFragment(HomeFragment(), activity)
 
         binding.appbarlayout.toolBar.setNavigationOnClickListener {
             binding.drawerLayout.open()
@@ -47,7 +50,7 @@ class HomePageActivity : VpnInternetAdapter() {
 
         list.clear()
         navItemTitleList.forEachIndexed { index, title ->
-            list.add(BranchesModel(navItemImageList[index].toString(), title))
+            list.add(BranchesModel(navItemImageList[index], title))
         }
 
         binding.navView.navRecyclerView.adapter = NavigationAdapter(this, list)
@@ -60,11 +63,11 @@ class HomePageActivity : VpnInternetAdapter() {
         binding.chipNavigationBar.setItemSelected(R.id.menu_home, true)
         binding.chipNavigationBar.setOnItemSelectedListener {
             when (it) {
-                R.id.menu_home -> replaceFragment(HomeFragment())
-                R.id.menu_profile -> replaceFragment(ProfileFragment())
-                R.id.menu_search -> replaceFragment(SearchFragment())
-                R.id.menu_video -> replaceFragment(VideoFragment())
-                else -> replaceFragment(HomeFragment())
+                R.id.menu_home -> loadFragment(HomeFragment(), activity)
+                R.id.menu_profile -> loadFragment(ProfileFragment(), activity)
+                R.id.menu_search -> loadFragment(SearchFragment(), activity)
+                R.id.menu_video -> loadFragment(VideoFragment(), activity)
+                else -> loadFragment(HomeFragment(),activity)
             }
         }
 
@@ -78,11 +81,11 @@ class HomePageActivity : VpnInternetAdapter() {
         }
     }
 
-    private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.activity_home_page_frame_layout, fragment)
-            .commitNow()
-    }
+//    private fun replaceFragment(fragment: Fragment) {
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.activity_home_page_frame_layout, fragment)
+//            .commitNow()
+//    }
 }
 
 

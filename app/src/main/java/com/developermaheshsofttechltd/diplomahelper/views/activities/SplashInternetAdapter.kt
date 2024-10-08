@@ -18,6 +18,6 @@ class SplashInternetAdapter : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(applicationContext, HomePageActivity::class.java))
             finish()  // Optionally finish the SplashActivity to prevent going back to it
-        }, 3000)
+        }, 1500)
     }
 }

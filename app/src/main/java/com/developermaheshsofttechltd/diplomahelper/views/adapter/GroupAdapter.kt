@@ -1,11 +1,14 @@
 package com.developermaheshsofttechltd.diplomahelper.views.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.developermaheshsofttechltd.diplomahelper.databinding.Item1HomefragBinding
 import com.developermaheshsofttechltd.diplomahelper.models.GroupModel
+import com.developermaheshsofttechltd.diplomahelper.quiz.QuizActivity
 
 class GroupAdapter(
     private val context: FragmentActivity,
@@ -32,7 +35,14 @@ class GroupAdapter(
             binding.ivImage.setImageResource(model.image)
             binding.tvTitle.text = model.title
             binding.root.setOnClickListener {
-                // Handle item click
+
+//                Toast.makeText(context, binding.tvTitle.text.toString().lowercase(), Toast.LENGTH_SHORT).show()
+                if (binding.tvTitle.text.toString().lowercase() == "quiz") {
+
+                    context.startActivity(Intent(context, QuizActivity::class.java))
+//                    context.finish()
+                }
+
             }
         }
     }

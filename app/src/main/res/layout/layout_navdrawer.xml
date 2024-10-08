@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="5dp"
-    android:background="@android:color/transparent">
+    android:background="@null">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent"
+        android:background="@null"
         android:backgroundTint="@android:color/transparent"
         android:paddingStart="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -131,6 +131,7 @@
             android:id="@+id/navRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:paddingLeft="12dp"
             tools:listitem="@layout/item_nav_drawer"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="30dp"

@@ -189,17 +189,17 @@
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/degree_back"
                     android:elevation="5dp"
-                    tools:listitem="@layout/course_item"
-                    tools:itemCount="12"
                     android:nestedScrollingEnabled="false"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
-                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/constraintLayout"
                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-                    app:spanCount="4" />
+                    app:spanCount="4"
+                    tools:itemCount="12"
+                    tools:listitem="@layout/course_item" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvBranchTitle"

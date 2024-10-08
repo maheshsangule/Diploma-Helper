@@ -23,8 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="10dp"
-            android:tint="@color/yellow"
-            app:srcCompat="@drawable/icon_camera"
+            android:src="@drawable/ic_computer"
             app:tint="@color/yellow" />
     </com.google.android.material.card.MaterialCardView>
 

@@ -35,7 +35,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:fontFamily="@font/josefinsans_bold"
-            android:paddingBottom="5dp"
             android:text="Home"
             android:textAlignment="textStart"
             android:textColor="@color/black"

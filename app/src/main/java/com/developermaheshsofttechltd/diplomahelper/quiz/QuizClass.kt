@@ -74,7 +74,7 @@ class QuizClass(private val context: Context) {
         }
     }
 
-    fun setRecyclerView(recycleView: RecyclerView?) {
+    fun setRecyclerView(recycleView: RecyclerView?, isShuffle: Boolean = false) {
         if (Constants.isNetworkAvailable(context)) {
             val pbDialog = Base.showProgressBar(context as Activity)
             val retrofit: Retrofit = Retrofit.Builder()
@@ -95,13 +95,21 @@ class QuizClass(private val context: Context) {
                         val adapter = GridAdapter(
 
                             context,
-                            Constants.getCategoryItemList(),
+                            Constants.getCategoryItemList(isShuffle),
                             categoryMap
                         )
+
                         recycleView?.adapter = adapter
+                        recycleView!!.setHasFixedSize(true)
                         adapter.setOnClickListener(object : GridAdapter.OnClickListener {
                             override fun onClick(id: Int) {
-                                getQuizList(15, id, null, null, Constants.getCategoryItemList())
+                                getQuizList(
+                                    15,
+                                    id,
+                                    null,
+                                    null,
+                                    Constants.getCategoryItemList(isShuffle)
+                                )
 
                             }
 

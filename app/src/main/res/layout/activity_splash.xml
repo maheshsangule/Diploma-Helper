@@ -64,7 +64,7 @@
         android:layout_gravity="bottom|center_vertical|center_horizontal|center"
         android:layout_marginBottom="14dp"
         android:fontFamily="@font/josefinsans_bold"
-        android:text="Made with Love in ���� India"
+        android:text="Made with Love in 🇮🇳 India"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"

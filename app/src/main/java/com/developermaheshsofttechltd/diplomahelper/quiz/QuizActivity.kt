@@ -15,12 +15,17 @@ class QuizActivity : AppCompatActivity() {
         ActivityQuizBinding.inflate(layoutInflater)
     }
 
-    private var categoryList = ArrayList<CategoryModelClass>()
-    private val activity = this
+//    private var categoryList = ArrayList<CategoryModelClass>()
+//    private val activity = this
+
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        binding.toolBar.setNavigationOnClickListener {
+            finish()
+        }
 
         val quizClass = QuizClass(this)
         quizClass.setRecyclerView(binding.categoryRecyclerView)
@@ -29,33 +34,35 @@ class QuizActivity : AppCompatActivity() {
         binding.apply {
             swipeRefreshLayout.setColorScheme(R.color.colorPrimary)
             swipeRefreshLayout.setOnRefreshListener {
-                val pbDialog = Base.showProgressBar(activity)
+//                val pbDialog = Base.showProgressBar(activity)
 //                dialog.show()
 
 
                 Handler(Looper.myLooper()!!).postDelayed({
                     swipeRefreshLayout.isRefreshing = false
-                    pbDialog.cancel()
-//                    quizClass.setRecyclerView(binding.categoryRecyclerView,true)
+//                    pbDialog.cancel()
+//                    categoryList.shuffle()
+
+                    // Notify the adapter of the data change
+//                    binding.categoryRecyclerView.adapter?.notifyDataSetChanged()
+                    quizClass.setRecyclerView(binding.categoryRecyclerView,true)
                 }, 1500)
             }
         }
 
-        // Removed unused category list setup
-
     }
 
-    @SuppressLint("WrongConstant")
-    override fun onStart() {
-        super.onStart()
+//    @SuppressLint("WrongConstant")
+//    override fun onStart() {
+//        super.onStart()
+//
+////        val rvCategoryList = binding.categoryRecyclerView
+////        rvCategoryList.layoutManager = GridLayoutManager(this, 2)
+//
+//        val quizClass = QuizClass(this)
+//        quizClass.setRecyclerView(binding.categoryRecyclerView)
+//    }
 
-//        val rvCategoryList = binding.categoryRecyclerView
-//        rvCategoryList.layoutManager = GridLayoutManager(this, 2)
-
-        val quizClass = QuizClass(this)
-        quizClass.setRecyclerView(binding.categoryRecyclerView)
-    }
-
-    companion object {
-    }
+//    companion object {
+//    }
 }

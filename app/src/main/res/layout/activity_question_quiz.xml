@@ -335,7 +335,7 @@
         android:fontFamily="@font/poppins_regular"
         android:gravity="center"
         android:paddingEnd="10dp"
-        android:text="Please select option"
+        android:text="Please select an option"
         android:textAlignment="center"
         android:textColor="@color/gray"
         android:textSize="14sp"

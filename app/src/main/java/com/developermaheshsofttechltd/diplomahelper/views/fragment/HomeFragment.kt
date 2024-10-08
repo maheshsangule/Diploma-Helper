@@ -33,13 +33,13 @@ class HomeFragment : Fragment() {
         listOf("Courses Videos", "Explore", "Projects")
     )
     private val branchesImageList: List<Int> = Collections.unmodifiableList(
-        listOf(R.drawable.computer_icon)
+        listOf(R.drawable.ic_computer)
     )
     private val branchesTextList: List<String> = Collections.unmodifiableList(
         listOf("Computer")
     )
     private val sliderImageList: List<String> = Collections.unmodifiableList(
-        listOf("https://devmahesh.excellencescholar.com/SliderHome/slider3.png")
+        listOf("https://devmahesh.excellencescholar.com/Bachelor%20Helper/SliderHome/slider3.png")
     )
     private val importantImageList: List<Int> = Collections.unmodifiableList(
         listOf(R.drawable.result_img, R.drawable.ic_chatgpt, R.drawable.quiz_img)
@@ -48,10 +48,10 @@ class HomeFragment : Fragment() {
         listOf("Result", "Chat GPT", "Quiz")
     )
     private val horScrollImageList: List<String> = Collections.unmodifiableList(
-        listOf("https://devmahesh.excellencescholar.com/SliderHome/slider4.png")
+        listOf("https://devmahesh.excellencescholar.com/Bachelor%20Helper/SliderHome/slider4.png")
     )
     private val academicImageList: List<Int> = Collections.unmodifiableList(
-        listOf(R.drawable.computer_icon)
+        listOf(R.drawable.ic_computer)
     )
     private val academicTextList: List<String> = Collections.unmodifiableList(
         listOf("Mechanical")
@@ -94,7 +94,7 @@ class HomeFragment : Fragment() {
     private fun initializeCourseList() {
         courseList.clear()
         for (i in 0..11) {
-            courseList.add(BranchesModel(branchesImageList[0].toString(), branchesTextList[0]))
+            courseList.add(BranchesModel(branchesImageList[0], branchesTextList[0]))
         }
     }
 
@@ -115,7 +115,7 @@ class HomeFragment : Fragment() {
     private fun initializeAcademicList() {
         academicList.clear()
         for (i in 0..7) {
-            academicList.add(BranchesModel(academicImageList[0].toString(), academicTextList[0]))
+            academicList.add(BranchesModel(academicImageList[0], academicTextList[0]))
         }
     }
 

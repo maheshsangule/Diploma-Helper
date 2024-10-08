@@ -19,14 +19,22 @@
             android:exported="false" />
 
         <activity
+            android:name=".quiz.QuizActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".quiz.QuizQuestionActivity"
             android:exported="false" />
 
         <activity
-            android:name=".quiz.QuizActivity"
+            android:name=".views.activities.HomePageActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".views.activities.SplashInternetAdapter"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.DiplomaHelper">
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

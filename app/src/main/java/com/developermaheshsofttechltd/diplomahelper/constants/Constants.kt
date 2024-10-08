@@ -35,7 +35,7 @@ object Constants {
         }
     }
 
-    fun getCategoryItemList(): ArrayList<CategoryModel> {
+    fun getCategoryItemList(isShuffle:Boolean=false): ArrayList<CategoryModel> {
         val list = ArrayList<CategoryModel>()
 
         list.add(
@@ -114,7 +114,13 @@ object Constants {
             CategoryModel("30", R.drawable.gadgets, "Gadgets")
         )
 
-        return list
+        return if (isShuffle) {
+            list.shuffle()
+            list
+        } else {
+            list
+        }
+
     }
 
     fun getRandomOptions(

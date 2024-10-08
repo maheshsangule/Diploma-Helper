@@ -30,7 +30,7 @@ class BranchesAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(model: BranchesModel, context: Context) {
-            binding.ivImage.setImageURI(model.courseIcon.toUri())
+            binding.ivImage.setImageResource(model.courseIcon)
             binding.tvText.text = model.courseTitle
         }
     }

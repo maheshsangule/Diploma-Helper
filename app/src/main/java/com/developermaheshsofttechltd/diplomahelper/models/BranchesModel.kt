@@ -4,6 +4,6 @@ import java.io.Serializable
 
 data class BranchesModel
     (
-    val courseIcon: String = "",
+    val courseIcon: Int,
     val courseTitle: String = ""
 ) : Serializable

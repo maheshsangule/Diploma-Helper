@@ -18,7 +18,7 @@ class NavigationAdapter(
 
         fun bind(model: BranchesModel) {
             with(binding) {
-                ivImage.setImageURI(model.courseIcon.toUri())
+                ivImage.setImageResource(model.courseIcon)
                 tvText.text = model.courseTitle
             }
         }

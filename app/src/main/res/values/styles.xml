@@ -4,6 +4,39 @@
         <item name="android:textSize">20sp</item>
         <item name="fontFamily">@font/poppins_bold</item>
     </style>
+
+    <style name="SearchView" parent="Widget.AppCompat.SearchView">
+
+        <item name="android:textColorHint">#BF426088</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:drawableEnd">@drawable/ic_mike</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:editTextColor">@color/colorPrimary</item>
+
+    </style>
+
+    <style name="CustomAlertDialogStyle" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:background">@color/gray</item>
+        <item name="android:windowBackground">@color/gray</item>
+
+    </style>
+
+    <style name="SplashScreen" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Define your text appearance attributes here -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:includeFontPadding">false</item>
+        <!--        <item name="android:textCursorDrawable">@color/colorPrimary</item>-->
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:textColorHighlight">@color/colorPrimary50</item>
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- Add more attributes as needed -->
+    </style>
 <!--    <style name="AlertDialog.AppCompat">-->
 <!--    </style>-->
 <!--    <style name="AlertDialog.AppCompat.Light">-->
