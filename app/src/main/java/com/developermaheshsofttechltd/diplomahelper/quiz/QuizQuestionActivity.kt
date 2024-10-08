@@ -2,17 +2,16 @@ package com.developermaheshsofttechltd.diplomahelper.quiz
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -83,6 +82,11 @@ class QuizQuestionActivity : AppCompatActivity() {
                 binding!!.mtvNoOptionSelected.visibility = View.GONE
             } else {
                 binding!!.mtvNoOptionSelected.visibility = View.VISIBLE
+                Handler(Looper.myLooper()!!).postDelayed(
+                    {
+                        binding!!.mtvNoOptionSelected.visibility = View.GONE
+                    }, 1500
+                )
 //                Toast.makeText(this, "Please select option", Toast.LENGTH_SHORT).show()
             }
 
@@ -93,7 +97,7 @@ class QuizQuestionActivity : AppCompatActivity() {
             if (allowPlaying) {
                 isNext = true
                 view.background = redBg
-                view.backgroundTintList=backTint
+                view.backgroundTintList = backTint
                 showCorrectAnswer()
                 setScore(view as Button?)
                 allowPlaying = false
@@ -128,17 +132,19 @@ class QuizQuestionActivity : AppCompatActivity() {
         }
     }
 
-    var count = 0
+    private var count = 0
+
+    @SuppressLint("SetTextI18n")
     private fun setQuestion() {
 
         count++
         if (count == 15) {
-            binding!!.btnNext.setText("Submit")
+            binding!!.btnNext.text = "Submit"
         }
         if (count < 10) {
-            binding!!.tvCurrentQuestion.setText("0" + count.toString())
+            binding!!.tvCurrentQuestion.text = "0" + count.toString()
         } else {
-            binding!!.tvCurrentQuestion.setText(count.toString())
+            binding!!.tvCurrentQuestion.text = count.toString()
         }
         val decodedQuestion = Constants.decodeHtmlString(questionList[position].question)
         binding?.tvQuestion?.text = decodedQuestion
