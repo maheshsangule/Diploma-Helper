@@ -13,7 +13,7 @@ import com.developermaheshsofttechltd.diplomahelper.databinding.ProgressbarBindi
 
 object Base {
     private lateinit var dialog: Dialog
-    fun showProgressBar(context: Activity): Dialog {
+    fun showProgressBar(context: Activity,isShow:Boolean): Dialog {
         val dialogBinding = ProgressbarBinding.inflate(context.layoutInflater)
 
         dialog = Dialog(context).apply {
@@ -24,7 +24,10 @@ object Base {
                 ActionBar.LayoutParams.MATCH_PARENT,
                 ActionBar.LayoutParams.WRAP_CONTENT
             )
-            show()
+            if(isShow)
+                show()
+            else
+                dismiss()
         }
 
 

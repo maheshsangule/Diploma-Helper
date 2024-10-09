@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.pm.PackageInfoCompat
-import androidx.fragment.app.Fragment
 import com.developermaheshsofttechltd.diplomahelper.R
 import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityHomePageBinding
 import com.developermaheshsofttechltd.diplomahelper.models.BranchesModel
@@ -14,7 +13,7 @@ import com.developermaheshsofttechltd.diplomahelper.views.adapter.NavigationAdap
 import com.developermaheshsofttechltd.diplomahelper.views.fragment.HomeFragment
 import com.developermaheshsofttechltd.diplomahelper.views.fragment.ProfileFragment
 import com.developermaheshsofttechltd.diplomahelper.views.fragment.SearchFragment
-import com.developermaheshsofttechltd.diplomahelper.views.fragment.VideoFragment
+import com.developermaheshsofttechltd.diplomahelper.views.fragment.ResultFragment
 
 class HomePageActivity : AppCompatActivity() {
 
@@ -66,7 +65,7 @@ class HomePageActivity : AppCompatActivity() {
                 R.id.menu_home -> loadFragment(HomeFragment(), activity)
                 R.id.menu_profile -> loadFragment(ProfileFragment(), activity)
                 R.id.menu_search -> loadFragment(SearchFragment(), activity)
-                R.id.menu_video -> loadFragment(VideoFragment(), activity)
+                R.id.menu_video -> loadFragment(ResultFragment(), activity)
                 else -> loadFragment(HomeFragment(),activity)
             }
         }
@@ -101,7 +100,7 @@ class HomePageActivity : AppCompatActivity() {
 //import com.developermaheshsofttechltd.diplomahelper.views.fragment.HomeFragment
 //import com.developermaheshsofttechltd.diplomahelper.views.fragment.ProfileFragment
 //import com.developermaheshsofttechltd.diplomahelper.views.fragment.SearchFragment
-//import com.developermaheshsofttechltd.diplomahelper.views.fragment.VideoFragment
+//import com.developermaheshsofttechltd.diplomahelper.views.fragment.ResultFragment
 //
 //class HomePageActivity : AppCompatActivity() {
 //
@@ -155,7 +154,7 @@ class HomePageActivity : AppCompatActivity() {
 //                    }
 //
 //                    R.id.menu_video -> {
-//                        loadFragment(VideoFragment(), activity)
+//                        loadFragment(ResultFragment(), activity)
 //                        hideToolBar()
 //                    }
 //

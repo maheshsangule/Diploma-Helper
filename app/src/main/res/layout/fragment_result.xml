@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
 
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/secondary_color">
 
     <ScrollView
@@ -101,7 +102,7 @@
                 android:layout_marginHorizontal="18dp"
                 android:layout_marginTop="45dp"
                 android:background="@drawable/background_button"
-                android:backgroundTint="@color/colorPrimary"
+                app:backgroundTint="@color/primary_color"
                 android:fontFamily="sans-serif-condensed-medium"
                 android:gravity="center"
                 android:text="Search"

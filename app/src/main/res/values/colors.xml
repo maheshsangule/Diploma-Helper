@@ -5,6 +5,8 @@
     <color name="colorPrimary20">#34426088</color>
     <color name="colorPrimary50">#3437386e</color>
 
+<!--    <color name="transparent">#00000000</color>-->
+
     <!-- Primary/Secondary App Colors -->
     <color name="background_material_dark">#121212</color>
     <color name="background_material_light">#ffffff</color>

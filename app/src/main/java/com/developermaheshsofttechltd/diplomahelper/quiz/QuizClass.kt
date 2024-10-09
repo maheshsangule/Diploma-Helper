@@ -24,7 +24,7 @@ class QuizClass(private val context: Context) {
         categoryItemList: ArrayList<CategoryModel>
     ) {
         if (Constants.isNetworkAvailable(context)) {
-            val pbDialog = Base.showProgressBar(context as Activity)
+            val pbDialog = Base.showProgressBar(context as Activity,true)
             val retrofit: Retrofit = Retrofit.Builder()
                 .baseUrl("https://opentdb.com/")
                 .addConverterFactory(GsonConverterFactory.create()).build()
@@ -76,7 +76,7 @@ class QuizClass(private val context: Context) {
 
     fun setRecyclerView(recycleView: RecyclerView?, isShuffle: Boolean = false) {
         if (Constants.isNetworkAvailable(context)) {
-            val pbDialog = Base.showProgressBar(context as Activity)
+            val pbDialog = Base.showProgressBar(context as Activity,true)
             val retrofit: Retrofit = Retrofit.Builder()
                 .baseUrl("https://opentdb.com/")
                 .addConverterFactory(GsonConverterFactory.create()).build()
