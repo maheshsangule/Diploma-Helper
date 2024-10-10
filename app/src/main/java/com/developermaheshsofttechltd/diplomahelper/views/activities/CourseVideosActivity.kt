@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +33,9 @@ class CourseVideosActivity : AppCompatActivity() {
 //            appbarlayout.toolBar.setNavigationIconTint(Color.BLACK)
 
             appbarlayout.toolBar.title = "Courses Videos"
+            appbarlayout.toolBar.setNavigationOnClickListener {
+                finish()
+            }
 
 
             swipeRefreshLayout.setOnRefreshListener {
@@ -86,7 +90,9 @@ class CourseVideosActivity : AppCompatActivity() {
                     request.setDestinationInExternalPublicDir(
                         Environment.DIRECTORY_DOWNLOADS,
                         Uri.parse(url).lastPathSegment
+
                     )
+                    Log.d("VISHAY", "loadData: $url")
 
                     val downloadManager =
                         context.getSystemService(DOWNLOAD_SERVICE) as DownloadManager

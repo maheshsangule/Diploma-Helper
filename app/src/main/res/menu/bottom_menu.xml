@@ -14,8 +14,8 @@
         app:cnb_iconColor="@color/yellow" />
     <item
         android:id="@+id/menu_video"
-        android:icon="@drawable/video_icon"
-        android:title="Videos"
+        android:icon="@drawable/ic_result"
+        android:title="Result"
         app:cnb_iconColor="@color/yellow" />
     <item
         android:id="@+id/menu_profile"

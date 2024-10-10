@@ -20,7 +20,6 @@
             android:layout_gravity="center"
             android:background="@color/colorPrimary"
             android:gravity="center"
-            android:paddingTop="5dp"
             app:menu="@menu/top_menu"
             app:navigationIcon="@drawable/icon_nav_drawer"
             app:navigationIconTint="@color/white"
