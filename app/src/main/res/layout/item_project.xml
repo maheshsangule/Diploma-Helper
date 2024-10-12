@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/secondary_color"
+    app:cardCornerRadius="18dp"
+    app:rippleColor="#4D426088"
+
+
+    app:strokeColor="@color/colorPrimary"
+    app:strokeWidth="3dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <!--        <com.google.android.material.card.MaterialCardView-->
+        <!--            android:id="@+id/cardView"-->
+        <!--            android:layout_width="50dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginStart="8dp"-->
+        <!--            android:layout_marginEnd="8dp"-->
+        <!--            android:layout_marginBottom="8dp"-->
+        <!--            android:transitionName="BookTrans"-->
+        <!--            app:cardBackgroundColor="@color/gray"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_constraintVertical_bias="0.5"-->
+        <!--            app:strokeColor="@color/colorPrimary"-->
+        <!--            tools:ignore="MissingConstraints">-->
+
+
+        <!--        </com.google.android.material.card.MaterialCardView>-->
+
+
+        <ImageView
+            android:id="@+id/ivItemBookImage"
+            android:layout_width="70dp"
+
+            android:layout_height="70dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_chat_gpt_input_et"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:transitionName="bookTrans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chatgpt_img2" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationView"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/discount" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvProjectTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_extrabold"
+            android:maxLines="3"
+
+            android:text="Resume Builder"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView"
+            app:layout_constraintStart_toEndOf="@+id/ivItemBookImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPdfTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+
+            android:fontFamily="@font/madmione"
+            android:maxLines="2"
+            android:text="How to be fineHow to be My name is Mahesh fineHow to be fineHow to be fineHow to be fineHow to be fine"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/ivItemBookImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvProjectTitle" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvProjectPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/madmione"
+            android:maxLines="3"
+            android:text="₹1000 Only"
+            android:textColor="@color/green"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/ivItemBookImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvPdfTitle" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/strike_text"
+            android:ellipsize="end"
+            android:fontFamily="@font/madmione"
+            android:maxLines="3"
+            android:text="2000₹"
+            android:textColor="@color/black50"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView10"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvProjectPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvProjectPrice" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_height="40dp"
+            android:rotationX="0"
+            android:src="@drawable/ic_down_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPdfTitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView10"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_screenshots" />
+
+        <!--        <View-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="2dp"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:background="@color/colorPrimary"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/tvPdfDownloadTime"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/tvPdfDownloadTime" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -140,13 +140,13 @@
             <com.google.android.material.textview.MaterialTextView
 
                 android:id="@+id/tv_signup"
-                android:textSize="14sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="-5dp"
                 android:text="Are you new user? Signup"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_login"
@@ -156,13 +156,15 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:gravity="center"
                 android:layout_marginBottom="-5dp"
                 android:background="@drawable/background_button"
+                android:gravity="center"
+
                 android:text="Login"
                 android:textColor="@color/white"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
 
             <com.google.android.material.textview.MaterialTextView
 
@@ -171,10 +173,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
                 android:layout_marginBottom="20dp"
-                android:textSize="14sp"
                 android:text="Forgot Password"
                 android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="14sp" />
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>

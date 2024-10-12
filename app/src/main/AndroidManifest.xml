@@ -12,29 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiplomaHelper"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".views.activities.ProjectActivity"
+            android:exported="false" />
         <activity
             android:name=".quiz.QuizResultActivity"
             android:exported="false" />
-
         <activity
             android:name=".views.activities.CourseVideosActivity"
             android:exported="false" />
-
         <activity
             android:name=".quiz.QuizActivity"
             android:exported="false" />
-
         <activity
             android:name=".quiz.QuizQuestionActivity"
             android:exported="false" />
-
         <activity
             android:name=".views.activities.HomePageActivity"
             android:exported="false" />
-
-
         <activity
             android:name=".views.activities.SplashInternetAdapter"
             android:exported="true"

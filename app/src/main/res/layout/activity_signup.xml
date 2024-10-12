@@ -134,7 +134,7 @@
                     android:layout_marginLeft="9dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/white"
-                    android:buttonTint="@color/yellow"
+                    android:enabled="true"
                     android:text="Male"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
@@ -252,15 +252,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="32dp"
-                    android:tint="@color/yellow"
-                    app:srcCompat="@drawable/facebook1" />
+                    app:srcCompat="@drawable/facebook1"
+                    app:tint="@color/yellow" />
 
                 <ImageView
                     android:id="@+id/activity_signup_google_login_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:tint="@color/yellow"
-                    app:srcCompat="@drawable/google1" />
+                    app:srcCompat="@drawable/google1"
+                    app:tint="@color/yellow" />
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
@@ -271,6 +271,7 @@
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="14dp"
+                app:backgroundTint="@color/colorPrimary"
                 android:background="@drawable/background_button"
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
