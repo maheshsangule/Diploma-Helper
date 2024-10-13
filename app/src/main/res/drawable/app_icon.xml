@@ -12,6 +12,6 @@
         </shape>
     </item>
     <item
-        android:drawable="@drawable/app_icon_diploma_helper"
+        android:drawable="@drawable/ic_app_icon"
         android:gravity="center" />
 </layer-list>

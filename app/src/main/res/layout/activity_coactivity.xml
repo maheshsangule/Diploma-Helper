@@ -173,7 +173,8 @@
                     android:layout_height="120dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginBottom="2dp"
-                    android:orientation="horizontal">//Computer Branch
+                    android:orientation="horizontal">
+<!--                    //Computer Branch-->
 
                     <LinearLayout
                         android:id="@+id/activity_coactivity_ll_english"
@@ -196,7 +197,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -242,7 +243,7 @@
                                     android:layout_marginEnd="0dp"
                                     android:layout_marginRight="16dp"
                                     android:background="@drawable/gradient_icon"
-                                    android:tint="@color/yellow"
+                                    app:tint="@color/yellow"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -284,7 +285,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -325,7 +326,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -373,7 +374,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -419,7 +420,7 @@
                                     android:layout_marginEnd="0dp"
                                     android:layout_marginRight="16dp"
                                     android:background="@drawable/gradient_icon"
-                                    android:tint="@color/yellow"
+                                    app:tint="@color/yellow"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -437,7 +438,7 @@
                                 android:textSize="14dp"
                                 android:textStyle="bold" />
                         </LinearLayout>
-                        android:background=&quot;@drawable/gradient_icon&quot;
+<!--                        android:background=&quot;@drawable/gradient_icon&quot;-->
                     </LinearLayout>
                     //AIML branch
 
@@ -461,12 +462,12 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/aiml_icon" />
+                                app:srcCompat="@drawable/chatgpt_img2" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
@@ -502,7 +503,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -548,12 +549,12 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/acchitecture_icon" />
+                                app:srcCompat="@drawable/chatgpt_img2" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
@@ -589,12 +590,12 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/automotive_icon" />
+                                app:srcCompat="@drawable/chatgpt_img2" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
@@ -630,7 +631,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -670,12 +671,12 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/aerospace_icon" />
+                                app:srcCompat="@drawable/chatgpt_img2" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
@@ -760,7 +761,7 @@
                                     android:layout_marginEnd="0dp"
                                     android:layout_marginRight="16dp"
                                     android:background="@drawable/gradient_icon"
-                                    android:tint="@color/yellow"
+                                    app:tint="@color/yellow"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -801,7 +802,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -840,7 +841,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -885,7 +886,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -923,12 +924,12 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/about_icon" />
+                                app:srcCompat="@drawable/chatgpt_img2" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
@@ -998,7 +999,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -1042,7 +1043,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -1085,12 +1086,12 @@
                                     android:layout_marginEnd="0dp"
                                     android:layout_marginRight="16dp"
                                     android:background="@drawable/gradient_icon"
-                                    android:tint="@color/yellow"
+                                    app:tint="@color/yellow"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/about_icon" />
+                                    app:srcCompat="@drawable/chatgpt_img2" />
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
                             <TextView
@@ -1161,7 +1162,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -1205,7 +1206,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -1243,12 +1244,12 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/about_icon" />
+                                app:srcCompat="@drawable/chatgpt_img2" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
@@ -1318,7 +1319,7 @@
                                 android:layout_marginEnd="0dp"
                                 android:layout_marginRight="16dp"
                                 android:background="@drawable/gradient_icon"
-                                android:tint="@color/yellow"
+                                app:tint="@color/yellow"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"

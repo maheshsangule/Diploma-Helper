@@ -6,7 +6,6 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.developermaheshsofttechltd.diplomahelper.R
-import com.developermaheshsofttechltd.diplomahelper.constants.Base
 import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityQuizBinding
 
 class QuizActivity : AppCompatActivity() {
@@ -23,8 +22,14 @@ class QuizActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.toolBar.setNavigationOnClickListener {
-            finish()
+
+
+        binding.apply {
+            include.toolBar.title = "Quiz"
+            include.toolBar.isTitleCentered = true
+            include.toolBar.setNavigationOnClickListener {
+                finish()
+            }
         }
 
         val quizClass = QuizClass(this)

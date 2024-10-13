@@ -1,6 +1,5 @@
 package com.developermaheshsofttechltd.diplomahelper.views.activities
 
-import android.app.Dialog
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -8,10 +7,14 @@ import android.os.CountDownTimer
 import android.preference.PreferenceManager
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
-import android.widget.*
+import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.codepath.asynchttpclient.RequestParams
 import com.developermaheshsofttechltd.diplomahelper.R
+import com.developermaheshsofttechltd.diplomahelper.constants.Base
+import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import org.asynchttpclient.AsyncHttpClient
@@ -19,101 +22,112 @@ import org.asynchttpclient.AsyncHttpClient
 @Suppress("DEPRECATION")
 class LoginActivity : AppCompatActivity() {
 
-    companion object {
-        const val is_login = Urls.is_login
-    }
-
-    private lateinit var btnLogin: Button
+    //    companion object {
+//        const val is_login = Urls.is_login
+//    }
+//
+//    private lateinit var btnLogin: Button
     private lateinit var client: AsyncHttpClient
-    private lateinit var dialog: Dialog
+//    private lateinit var dialog: Dialog
     private lateinit var editor: SharedPreferences.Editor
-    private lateinit var email: EditText
 
-    //    private lateinit var gsc: GoogleSignInClient
+    //    private lateinit var email: EditText
+//
+//        private lateinit var gsc: GoogleSignInAccount
     private lateinit var gso: GoogleSignInOptions
-    private lateinit var imgFacebookLogin: ImageView
-    private lateinit var imgGoogleLogin: ImageView
-    private lateinit var ivEtPassword: ImageView
+
+    //    private lateinit var imgFacebookLogin: ImageView
+//    private lateinit var imgGoogleLogin: ImageView
+//    private lateinit var ivEtPassword: ImageView
     private lateinit var params: RequestParams
-    private lateinit var password: EditText
-    private lateinit var setError: TextView
+
+    //    private lateinit var password: EditText
+//    private lateinit var setError: TextView
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var sheetDialog: BottomSheetDialog
-    private lateinit var tvSignup: TextView
+//    private lateinit var tvSignup: TextView
+
+
+    private val binding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
+    private val activity = this
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(binding.root)
 
-        sheetDialog = BottomSheetDialog(this, R.style.BottomSheetStyle)
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        editor = sharedPreferences.edit()
+        binding.apply {
 
-        btnLogin = findViewById(R.id.btn_login)
-        tvSignup = findViewById(R.id.tv_signup)
-        imgGoogleLogin = findViewById(R.id.activity_login_google_login_img)
-        imgFacebookLogin = findViewById(R.id.activity_login_facebook_login_img)
-        email = findViewById(R.id.activity_login_et_loginemail)
-        password = findViewById(R.id.activity_login_et_loginpassword)
-        setError = findViewById(R.id.activity_login_tv_error)
-        ivEtPassword = findViewById(R.id.activity_login_iv_et_password)
-        ivEtPassword.setImageResource(R.drawable.icon_eye_enable)
 
-        dialog = Dialog(this)
-        dialog.requestWindowFeature(1)
-        dialog.setContentView(R.layout.progressbar)
-        dialog.setCanceledOnTouchOutside(false)
+            sheetDialog = BottomSheetDialog(activity, R.style.BottomSheetStyle)
+            sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
+            editor = sharedPreferences.edit()
 
-        gso =
-            GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build()
-//        gsc = GoogleSignIn.getClient(this, gso)
+//            btnLogin = findViewById(R.id.btn_login)
+//            tvSignup = findViewById(R.id.tv_signup)
+//            imgGoogleLogin = findViewById(R.id.activity_login_google_login_img)
+//            imgFacebookLogin = findViewById(R.id.activity_login_facebook_login_img)
+//            email = findViewById(R.id.activity_login_et_loginemail)
+//            password = findViewById(R.id.activity_login_et_loginpassword)
+//            setError = findViewById(R.id.activity_login_tv_error)
+//            ivEtPassword = findViewById(R.id.activity_login_iv_et_password)
+//            ivEtPassword.setImageResource(R.drawable.icon_eye_enable)
 
-        ivEtPassword.setOnClickListener {
-            if (password.transformationMethod == HideReturnsTransformationMethod.getInstance()) {
-                password.transformationMethod = PasswordTransformationMethod.getInstance()
-                ivEtPassword.setImageResource(R.drawable.icon_eye_enable)
-            } else {
-                password.transformationMethod = HideReturnsTransformationMethod.getInstance()
-                ivEtPassword.setImageResource(R.drawable.icon_eye_disable)
+//            dialog = Dialog(activity)
+//            dialog.requestWindowFeature(1)
+//            dialog.setContentView(R.layout.progressbar)
+//            dialog.setCanceledOnTouchOutside(false)
+
+            gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail()
+                .build()
+//        gsc = GoogleSignIn.getClient(activity, gso)
+
+            etEyePassword.setOnClickListener {
+                if (etPassword.transformationMethod == HideReturnsTransformationMethod.getInstance()) {
+                    etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+                    etEyePassword.setImageResource(R.drawable.ic_eye_visible)
+                } else {
+                    etPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                    etEyePassword.setImageResource(R.drawable.ic_eye_invisible)
+                }
             }
-        }
 
-        imgFacebookLogin.setOnClickListener {
+            ivFacebookLogin.setOnClickListener {
 //            println("$s1$s2")
-//            Toast.makeText(this, "$s1$s2", Toast.LENGTH_SHORT).show()
-        }
+//            Toast.makeText(activity, "$s1$s2", Toast.LENGTH_SHORT).show()
+            }
 
-        imgGoogleLogin.setOnClickListener {
-            object : CountDownTimer(2000, 1000) {
-                override fun onTick(millisUntilFinished: Long) {
-                    dialog.show()
+            ivGoogleLogin.setOnClickListener {
+//                SignIn()
+            }
+
+            tvSignup.setOnClickListener {
+                Base.showProgressBar(activity,false)
+                startActivity(Intent(activity, SignupActivity::class.java))
+//                dialog.dismiss()
+//                startActivity(intent)
+            }
+
+            mbtnLogin.setOnClickListener {
+                when {
+                    etEmail.text.toString().isEmpty() ->
+                        etEmail.error = "Username could not be Empty!"
+
+                    etPassword.text.toString().isEmpty() ->
+                        etPassword.error = "Password could not be empty"
+
+                    else -> checkLoginUser()
                 }
-
-                override fun onFinish() {
-//                    signIn()
-                }
-            }.start()
-        }
-
-        tvSignup.setOnClickListener {
-            dialog.show()
-            val intent = Intent(this, SignupActivity::class.java)
-            dialog.dismiss()
-            startActivity(intent)
-        }
-
-        btnLogin.setOnClickListener {
-            when {
-                email.text.toString().isEmpty() -> setError.text = "Username could not be Empty!"
-                password.text.toString().isEmpty() -> setError.text = "Password could not be empty"
-                else -> checkLoginUser()
             }
         }
     }
 
     private fun checkLoginUser() {
-        params.put("email", email.text.toString())
-        params.put("password", password.text.toString())
+
+        startActivity(Intent(activity,HomeActivity::class.java))
+//        params["email"] = binding.etEmail.text.toString()
+//        params["password"] = binding.etPassword.text.toString()
 //        client.post(Urls.urlLoginUser, params, object : JsonHttpResponseHandler() {
 ////            override fun onSuccess(statusCode: Int, headers: Array<Header>, response: JSONObject) {
 ////                super.onSuccess(statusCode, headers, response)
@@ -127,14 +141,14 @@ class LoginActivity : AppCompatActivity() {
 ////                        override fun onFinish() {
 ////                            dialog.dismiss()
 ////                            if (isSuccess == AppEventsConstants.EVENT_PARAM_VALUE_YES) {
-////                                Toast.makeText(this@LoginActivity, "Login Successful!", Toast.LENGTH_SHORT).show()
+////                                Toast.makeText(activity@LoginActivity, "Login Successful!", Toast.LENGTH_SHORT).show()
 ////                                editor.putBoolean(Urls.is_login, true).commit()
-////                                val intent = Intent(this@LoginActivity, HomePageActivity::class.java)
+////                                val intent = Intent(activity@LoginActivity, HomeActivity::class.java)
 ////                                editor.putString("username", email.text.toString()).commit()
 ////                                startActivity(intent)
 ////                                finish()
 ////                            } else {
-////                                Toast.makeText(this@LoginActivity, "Invalid Username or Password", Toast.LENGTH_SHORT).show()
+////                                Toast.makeText(activity@LoginActivity, "Invalid Username or Password", Toast.LENGTH_SHORT).show()
 ////                            }
 ////                        }
 ////                    }.start()
@@ -145,7 +159,7 @@ class LoginActivity : AppCompatActivity() {
 ////
 ////            override fun onFailure(statusCode: Int, headers: Array<Header>, throwable: Throwable, errorResponse: JSONObject?) {
 ////                super.onFailure(statusCode, headers, throwable, errorResponse)
-////                Toast.makeText(this@LoginActivity, "Server Error", Toast.LENGTH_SHORT).show()
+////                Toast.makeText(activity@LoginActivity, "Server Error", Toast.LENGTH_SHORT).show()
 ////            }
 //
 //            override fun onFailure(
@@ -171,9 +185,9 @@ class LoginActivity : AppCompatActivity() {
     @Deprecated("This method has been deprecated in favor of using the Activity Result API\n      which brings increased type safety via an {@link ActivityResultContract} and the prebuilt\n      contracts for common intents available in\n      {@link androidx.activity.result.contract.ActivityResultContracts}, provides hooks for\n      testing, and allow receiving results in separate, testable classes independent from your\n      activity. Use\n      {@link #registerForActivityResult(ActivityResultContract, ActivityResultCallback)}\n      with the appropriate {@link ActivityResultContract} and handling the result in the\n      {@link ActivityResultCallback#onActivityResult(Object) callback}.")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        dialog.show()
+        Base.showProgressBar(activity,true)
         if (requestCode == 1000) {
-            dialog.dismiss()
+            Base.showProgressBar(activity,false)
 //            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
 //            try {
 //                dialog.dismiss()
@@ -181,13 +195,13 @@ class LoginActivity : AppCompatActivity() {
 //                emailLogin()
 //            } catch (e: ApiException) {
 //                dialog.dismiss()
-//                Toast.makeText(this, "Something went wrong!", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(activity, "Something went wrong!", Toast.LENGTH_SHORT).show()
 //            }
         }
     }
 
 //    private fun emailLogin() {
-////        val googleSignInAccount = GoogleSignIn.getLastSignedInAccount(this)
+////        val googleSignInAccount = GoogleSignIn.getLastSignedInAccount(activity)
 //        googleSignInAccount?.let {
 //            params.put("email_google", googleSignInAccount.email.toString())
 //            params.put("photo_url", googleSignInAccount.photoUrl.toString())
@@ -199,14 +213,14 @@ class LoginActivity : AppCompatActivity() {
 //////                        if (isSuccess == AppEventsConstants.EVENT_PARAM_VALUE_YES) {
 //////                            val editor1 = getSharedPreferences(is_login, 0).edit()
 //////                            editor1.putBoolean(Urls.is_login, true).commit()
-//////                            val intent = Intent(this@LoginActivity, HomePageActivity::class.java)
+//////                            val intent = Intent(activity@LoginActivity, HomeActivity::class.java)
 //////                            editor.putString("username", it.email).commit()
 //////                            startActivity(intent)
 //////                            finish()
 //////                        } else if (isSuccess == "2D") {
 //////                            showDialog()
 //////                        } else {
-//////                            Toast.makeText(this@LoginActivity, "Something Went Wrong", Toast.LENGTH_LONG).show()
+//////                            Toast.makeText(activity@LoginActivity, "Something Went Wrong", Toast.LENGTH_LONG).show()
 //////                        }
 //////                    } catch (e: JSONException) {
 //////                        throw RuntimeException(e)
@@ -215,7 +229,7 @@ class LoginActivity : AppCompatActivity() {
 ////
 //////                override fun onFailure(statusCode: Int, headers: Array<Header>, responseString: String?, throwable: Throwable) {
 //////                    super.onFailure(statusCode, headers, responseString, throwable)
-//////                    Toast.makeText(this@LoginActivity, "Server Error", Toast.LENGTH_SHORT).show()
+//////                    Toast.makeText(activity@LoginActivity, "Server Error", Toast.LENGTH_SHORT).show()
 //////                }
 ////
 ////                override fun onFailure(
@@ -249,14 +263,14 @@ class LoginActivity : AppCompatActivity() {
         btnVpnRefresh.setOnClickListener {
             object : CountDownTimer(1000, 2000) {
                 override fun onTick(l: Long) {
-                    dialog.show()
+//                    dialog.show()
                     sheetDialog.dismiss()
                 }
 
                 override fun onFinish() {
-                    dialog.dismiss()
+//                    dialog.dismiss()
                     sheetDialog.dismiss()
-                    startActivity(Intent(this@LoginActivity, SignupActivity::class.java))
+                    startActivity(Intent(activity, SignupActivity::class.java))
                 }
             }.start()
         }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_marginVertical="2dp"
     app:cardBackgroundColor="@color/secondary_color"
     app:cardCornerRadius="18dp"
     app:rippleColor="#4D426088"
@@ -54,9 +54,10 @@
             app:srcCompat="@drawable/chatgpt_img2" />
 
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottieAnimationView"
+            android:id="@+id/laDiscount"
             android:layout_width="60dp"
             android:layout_height="70dp"
+            app:lottie_autoPlay="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_loop="true"
@@ -78,12 +79,12 @@
             android:textSize="18sp"
 
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView"
+            app:layout_constraintEnd_toStartOf="@+id/laDiscount"
             app:layout_constraintStart_toEndOf="@+id/ivItemBookImage"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvPdfTitle"
+            android:id="@+id/tvProjectDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -96,7 +97,7 @@
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView"
+            app:layout_constraintEnd_toStartOf="@+id/laDiscount"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/ivItemBookImage"
             app:layout_constraintTop_toBottomOf="@+id/tvProjectTitle" />
@@ -114,7 +115,7 @@
             android:textColor="@color/green"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/ivItemBookImage"
-            app:layout_constraintTop_toBottomOf="@+id/tvPdfTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/tvProjectDescription" />
 
 
         <com.google.android.material.textview.MaterialTextView
@@ -129,20 +130,20 @@
             android:text="2000₹"
             android:textColor="@color/black50"
             android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView10"
+            app:layout_constraintEnd_toStartOf="@+id/ivArrow"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvProjectPrice"
             app:layout_constraintTop_toTopOf="@+id/tvProjectPrice" />
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/ivArrow"
             android:layout_width="40dp"
             android:layout_marginEnd="20dp"
             android:layout_height="40dp"
             android:rotationX="0"
             android:src="@drawable/ic_down_arrow"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPdfTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/tvProjectDescription" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -154,7 +155,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10"
+            app:layout_constraintTop_toBottomOf="@+id/ivArrow"
             tools:itemCount="10"
             tools:listitem="@layout/item_screenshots" />
 

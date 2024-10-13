@@ -39,6 +39,16 @@ class QuizQuestionActivity : AppCompatActivity() {
         setContentView(binding?.root)
         SharedPrefUtils.init(activity)
 
+        binding?.apply {
+            include.ibCancel.setOnClickListener{
+                binding!!.include.layoutConstraint.visibility = View.GONE
+            }
+        }
+
+
+
+
+
 //        binding?.apply {
 //
 //            mtvNoOptionSelected.setOnTouchListener { v, event ->
@@ -75,17 +85,19 @@ class QuizQuestionActivity : AppCompatActivity() {
         setQuestion()
         setOptions()
 //        binding?.tvProgress?.text = "1/${questionList.size}"
+
+
         binding?.btnNext?.setOnClickListener {
             if (isNext) {
                 onNext()
                 isNext = false
-                binding!!.mtvNoOptionSelected.visibility = View.GONE
+                binding!!.include.layoutConstraint.visibility = View.GONE
             } else {
-                binding!!.mtvNoOptionSelected.visibility = View.VISIBLE
+                binding!!.include.layoutConstraint.visibility = View.VISIBLE
                 Handler(Looper.myLooper()!!).postDelayed(
                     {
-                        binding!!.mtvNoOptionSelected.visibility = View.GONE
-                    }, 1500
+                        binding!!.include.layoutConstraint.visibility = View.GONE
+                    }, 3000
                 )
 //                Toast.makeText(this, "Please select option", Toast.LENGTH_SHORT).show()
             }

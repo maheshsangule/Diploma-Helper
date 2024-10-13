@@ -129,7 +129,7 @@ class OtpActivity : AppCompatActivity() {
                                 "mobile_number",
                                 intent.getStringExtra("mobile_number")
                             ).apply()
-                            val intent = Intent(this, HomePageActivity::class.java)
+                            val intent = Intent(this, HomeActivity::class.java)
                             intent.flags =
                                 Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                             startActivity(intent)

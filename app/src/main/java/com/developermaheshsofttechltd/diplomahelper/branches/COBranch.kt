@@ -31,8 +31,8 @@ class COBranch : AppCompatActivity() {
             SlideModel(R.drawable.it_slider, ScaleTypes.FIT),
             SlideModel(R.drawable.electrical_slider, ScaleTypes.FIT),
             SlideModel(R.drawable.electronices_slider, ScaleTypes.FIT),
-            SlideModel(R.drawable.aiml_slider2, ScaleTypes.FIT),
-            SlideModel(R.drawable.aerospace_slider, ScaleTypes.FIT)
+            SlideModel(R.drawable.chatgpt_img2, ScaleTypes.FIT),
+            SlideModel(R.drawable.chatgpt_img2, ScaleTypes.FIT)
         )
 
         imageSlider.setImageList(slideModels)

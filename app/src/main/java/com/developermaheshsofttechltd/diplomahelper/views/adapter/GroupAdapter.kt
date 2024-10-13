@@ -9,6 +9,7 @@ import com.developermaheshsofttechltd.diplomahelper.databinding.Item1HomefragBin
 import com.developermaheshsofttechltd.diplomahelper.models.GroupModel
 import com.developermaheshsofttechltd.diplomahelper.quiz.QuizActivity
 import com.developermaheshsofttechltd.diplomahelper.views.activities.CourseVideosActivity
+import com.developermaheshsofttechltd.diplomahelper.views.activities.ProjectActivity
 
 class GroupAdapter(
     private val context: FragmentActivity,
@@ -44,6 +45,10 @@ class GroupAdapter(
 
                     "courses videos" -> {
                         context.startActivity(Intent(context, CourseVideosActivity::class.java))
+                    }
+
+                    "projects" -> {
+                        context.startActivity(Intent(context, ProjectActivity::class.java))
                     }
 
 

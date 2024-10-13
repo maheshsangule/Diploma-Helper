@@ -3,23 +3,22 @@ package com.developermaheshsofttechltd.diplomahelper.views.activities
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.pm.PackageInfoCompat
 import com.developermaheshsofttechltd.diplomahelper.R
-import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityHomePageBinding
+import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityHomeBinding
 import com.developermaheshsofttechltd.diplomahelper.models.BranchesModel
 import com.developermaheshsofttechltd.diplomahelper.utils.FragmentUtils.Companion.loadFragment
 import com.developermaheshsofttechltd.diplomahelper.views.adapter.NavigationAdapter
 import com.developermaheshsofttechltd.diplomahelper.views.fragment.HomeFragment
 import com.developermaheshsofttechltd.diplomahelper.views.fragment.ProfileFragment
-import com.developermaheshsofttechltd.diplomahelper.views.fragment.SearchFragment
 import com.developermaheshsofttechltd.diplomahelper.views.fragment.ResultFragment
+import com.developermaheshsofttechltd.diplomahelper.views.fragment.SearchFragment
 
-class HomePageActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
-    private val binding: ActivityHomePageBinding by lazy(LazyThreadSafetyMode.NONE) {
-        ActivityHomePageBinding.inflate(layoutInflater)
-    }
+    private val binding by lazy { ActivityHomeBinding.inflate(layoutInflater) }
     private val list = ArrayList<BranchesModel>()
     private val navItemTitleList = listOf(
         "Home", "Admin Login", "Latest Updates", "Download Papers", "Syllabus",
@@ -62,22 +61,47 @@ class HomePageActivity : AppCompatActivity() {
         binding.chipNavigationBar.setItemSelected(R.id.menu_home, true)
         binding.chipNavigationBar.setOnItemSelectedListener {
             when (it) {
-                R.id.menu_home -> loadFragment(HomeFragment(), activity)
-                R.id.menu_profile -> loadFragment(ProfileFragment(), activity)
-                R.id.menu_search -> loadFragment(SearchFragment(), activity)
-                R.id.menu_video -> loadFragment(ResultFragment(), activity)
-                else -> loadFragment(HomeFragment(),activity)
+                R.id.menu_home -> {
+                    loadFragment(HomeFragment(), activity)
+                    showToolBar()
+                }
+
+
+                R.id.menu_search -> {
+                    loadFragment(SearchFragment(), activity)
+                    hideToolBar()
+                }
+
+
+                R.id.menu_video -> {
+                    loadFragment(ResultFragment(), activity)
+                    showToolBar()
+                }
+                R.id.menu_profile -> {
+                    loadFragment(ProfileFragment(), activity)
+                    showToolBar()
+                }
+
+                else -> {
+                    loadFragment(HomeFragment(), activity)
+                    showToolBar()
+                }
             }
         }
 
-        binding.appbarlayout.toolBar.setOnMenuItemClickListener { item ->
-            if (item.itemId == R.id.menu_notification) {
-                startActivity(Intent(this, NotificationActivity::class.java))
-                true
-            } else {
-                false
-            }
+        binding.appbarlayout.toolBar.setOnMenuItemClickListener {
+            startActivity(Intent(this, NotificationActivity::class.java))
+            return@setOnMenuItemClickListener true
         }
+    }
+
+
+    private fun hideToolBar() {
+        binding.appbarlayout.toolBar.visibility = View.GONE
+    }
+
+    private fun showToolBar() {
+        binding.appbarlayout.toolBar.visibility = View.VISIBLE
     }
 
 //    private fun replaceFragment(fragment: Fragment) {
@@ -102,7 +126,7 @@ class HomePageActivity : AppCompatActivity() {
 //import com.developermaheshsofttechltd.diplomahelper.views.fragment.SearchFragment
 //import com.developermaheshsofttechltd.diplomahelper.views.fragment.ResultFragment
 //
-//class HomePageActivity : AppCompatActivity() {
+//class HomeActivity : AppCompatActivity() {
 //
 //    private val activity = this
 //    private val list = ArrayList<BranchesModel>()

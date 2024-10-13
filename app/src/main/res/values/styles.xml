@@ -2,14 +2,15 @@
 <resources>
     <style name="ActionBarFont">
         <item name="android:textSize">20sp</item>
-        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="fontFamily">@font/madmione</item>
+
     </style>
 
     <style name="SearchView" parent="Widget.AppCompat.SearchView">
 
         <item name="android:textColorHint">@color/colorPrimary</item>
         <item name="android:textSize">18sp</item>
-        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="fontFamily">@font/madmione</item>
         <item name="android:textStyle">bold</item>
         <item name="android:drawableEnd">@drawable/ic_mike</item>
         <item name="android:textColor">@color/colorPrimary</item>
