@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
 
         binding.apply {
             Handler(Looper.getMainLooper()).postDelayed({
-                startActivity(Intent(applicationContext, LoginActivity::class.java))
+                startActivity(Intent(applicationContext, StartActivity::class.java))
                 finish()  // Optionally finish the SplashActivity to prevent going back to it
             }, 1500)
         }

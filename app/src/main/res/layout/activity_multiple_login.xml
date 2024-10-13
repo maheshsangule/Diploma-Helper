@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.activities.MultipleLoginActivity"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/josefinsans_bold"
+            android:rotationX="360"
+            android:text="Welcome Back,\nto your app"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/akronim"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <com.google.android.material.textview.MaterialTextView
+
+            android:id="@+id/textView9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:fontFamily="@font/josefinsans_bold"
+            android:text="Connecting Engineer&apos;s Together"
+            android:textAlignment="center"
+            android:textColor="@color/yellow"
+            android:textIsSelectable="false"
+            android:textSize="34sp"
+            app:fontFamily="@font/akronim"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <ImageView
+            android:id="@+id/activity_start2_iv1"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/logo_banner"
+            app:tint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tvLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/poppins_bold"
+
+            android:paddingStart="20dp"
+            android:paddingEnd="30dp"
+            android:text="Login"
+
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/background_button"
+            app:backgroundTint="#DD2C00"
+            app:icon="@drawable/login_icon_1"
+            app:iconPadding="10dp"
+            app:iconSize="28dp"
+            app:iconTint="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_start2_iv1" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tvSignup"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/background_button"
+            android:drawableTint="@color/yellow"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingStart="20dp"
+            android:paddingEnd="30dp"
+            android:text="SignUp"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#DD2C00"
+            app:icon="@drawable/signup_icon_2"
+            app:iconPadding="10dp"
+            app:iconSize="28dp"
+            app:iconTint="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tvOtpLogin"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/background_button"
+            android:drawableTint="@color/yellow"
+
+            android:fontFamily="@font/poppins_bold"
+            android:paddingStart="20dp"
+            android:text="Continue with phone"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#DD2C00"
+            app:icon="@drawable/smartphone_icon"
+            app:iconPadding="10dp"
+            app:iconSize="28dp"
+            app:iconTint="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSignup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
