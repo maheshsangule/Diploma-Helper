@@ -2,6 +2,7 @@ package com.developermaheshsofttechltd.diplomahelper.views.activities
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityMultipleLoginBinding
 import com.developermaheshsofttechltd.diplomahelper.views.adapter.VpnInternetAdapter
 
@@ -18,6 +19,7 @@ class MultipleLoginActivity : VpnInternetAdapter() {
     private val activity = this
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        enableEdgeToEdge()
         setContentView(binding.root)
 
 //        tv1 = findViewById(R.id.activity_start2_tv1)

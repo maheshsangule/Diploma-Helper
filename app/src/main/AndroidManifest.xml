@@ -16,6 +16,17 @@
             android:name=".views.activities.ProjectActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".views.activities.StartActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".views.activities.MobileNumberActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".views.activities.MultipleLoginActivity"
+            android:exported="false" />
 
         <activity
             android:name=".views.activities.LoginActivity"

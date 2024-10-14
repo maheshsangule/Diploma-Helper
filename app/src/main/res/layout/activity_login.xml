@@ -16,24 +16,30 @@
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/logo_background"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:scaleType="fitXY"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/back_3" />
+            android:src="@drawable/back_3" />
 
         <ImageView
             android:id="@+id/imageView50"
-            android:layout_width="283dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/imageView5"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo2" />
+            app:layout_constraintVertical_bias="0.28"
+            app:srcCompat="@drawable/ic_login_logo" />
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -41,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="30dp"
+
             android:background="@drawable/background_purple_1"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"

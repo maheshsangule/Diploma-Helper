@@ -26,8 +26,8 @@
 
         <ImageView
             android:id="@+id/iv_signup2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             app:layout_constraintBottom_toBottomOf="@+id/imageView7"
@@ -35,7 +35,7 @@
             app:layout_constraintStart_toStartOf="@+id/imageView7"
             app:layout_constraintTop_toTopOf="@+id/imageView7"
             app:layout_constraintVertical_bias="0.25"
-            app:srcCompat="@drawable/logo3" />
+            app:srcCompat="@drawable/ic_signup_logo" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/activity_signup_tv_error"
