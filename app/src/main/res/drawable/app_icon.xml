@@ -7,7 +7,7 @@
                 android:left="20dp"
                 android:right="20dp"
                 android:top="20dp" />
-            <solid android:color="@color/secondary_color" />
+            <solid android:color="@color/gray" />
             <corners android:radius="24sp" />
         </shape>
     </item>

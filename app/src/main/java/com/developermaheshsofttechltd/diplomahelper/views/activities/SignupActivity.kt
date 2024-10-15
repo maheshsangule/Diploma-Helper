@@ -20,6 +20,7 @@ import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.developermaheshsofttechltd.diplomahelper.R
+import com.developermaheshsofttechltd.diplomahelper.constants.Constants.showToast
 import com.developermaheshsofttechltd.diplomahelper.databinding.ActivitySignupBinding
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -78,8 +79,12 @@ class SignupActivity : AppCompatActivity() {
         binding.apply {
 
 
-            customErrorDrawable = resources.getDrawable(R.drawable.icon_seterror2, null).apply {
-                setBounds(0, 0, intrinsicWidth, intrinsicHeight)
+//            customErrorDrawable = resources.getDrawable(R.drawable.icon_seterror2, null).apply {
+//                setBounds(0, 0, intrinsicWidth, intrinsicHeight)
+//            }
+
+            include.ibCancel.setOnClickListener {
+                showToast(activity, include, isShowToast = false)
             }
 
             sheetDialog = BottomSheetDialog(activity, R.style.BottomSheetStyle)
@@ -156,62 +161,62 @@ class SignupActivity : AppCompatActivity() {
     private fun validateAndSignup(binding: ActivitySignupBinding) {
         binding.apply {
             when {
-                etName.text.isNullOrEmpty() -> showError("Please Enter the Name...", etName)
-                !etName.text.toString()
-                    .matches("[a-zA-Z ]+".toRegex()) -> showError(
-                    "Please Enter Alphabets Only",
-                    etName
-                )
+                etName.text.isNullOrEmpty() -> {
+                    showToast(activity, include, "Please Enter the Name...")
+                }
 
-                etName.text.length < 8 -> showError(
-                    "Name should be of greater than 8 char..",
-                    etName
-                )
+                !etName.text.toString().matches("[a-zA-Z ]+".toRegex()) -> {
+                    showToast(activity, include, "Please Enter Alphabets Only")
+                }
 
-                etUsername.text.isNullOrEmpty() -> showError("Please Enter UserName...", etUsername)
-                !etUsername.text.toString().matches("[a-z-_]+".toRegex()) -> showError(
-                    "Please Enter Small letters Only",
-                    etUsername
-                )
+                etName.text.length < 8 -> {
+                    showToast(activity, include, "Name should be of greater than 8 char..")
+                }
 
-                etUsername.text.length < 8 -> showError(
-                    "Username must be of greater than 8 char..",
-                    etUsername
-                )
+                etUsername.text.isNullOrEmpty() -> {
+                    showToast(activity, include, "Please Enter UserName...")
+                }
 
-                etMobileNumber.text.isNullOrEmpty() -> showError(
-                    "Please Enter Mobile Number...",
-                    etMobileNumber
-                )
+                !etUsername.text.toString().matches("[a-z-_]+".toRegex()) -> {
+                    showToast(activity, include, "Please Enter Small letters Only")
+                }
 
-                rbMale.isChecked.not() && rbFemale.isChecked.not() -> showError(
-                    "Please Select Gender",
-                    null
-                )
+                etUsername.text.length < 8 -> {
+                    showToast(activity, include, "Username must be of greater than 8 char..")
+                }
 
-                etEmail.text.isNullOrEmpty() -> showError("Please Enter Email...", etEmail)
-                !etEmail.text.contains("@") || !etEmail.text.contains(".com") || !etEmail.text.contains(
-                    "gmail"
-                ) -> showError("Please Enter Valid Email Id", etEmail)
+                etMobileNumber.text.isNullOrEmpty() -> {
+                    showToast(activity, include, "Please Enter Mobile Number...")
+                }
 
-                etPassword.text.isNullOrEmpty() -> showError("Please Enter Password...", null)
-                etPassword.text.length < 8 -> showError(
-                    "Password must be of greater than 8 character",
-                    null
-                )
+                rbMale.isChecked.not() && rbFemale.isChecked.not() -> {
+                    showToast(activity, include, "Please Select Gender")
+                }
 
-                etConfirmPassword.text.isNullOrEmpty() -> showError(
-                    "Please Confirm the Password...",
-                    null
-                )
+                etEmail.text.isNullOrEmpty() -> {
+                    showToast(activity, include, "Please Enter Email...")
+                }
+                !etEmail.text.contains("@") || !etEmail.text.contains(".com") || !etEmail.text.contains("gmail") -> {
+                    showToast(activity, include, "Please Enter Valid Email Id")
+                }
 
-                etConfirmPassword.text.toString() != etPassword.text.toString() -> showError(
-                    "Confirm the Password Properly",
-                    null
-                )
+                etPassword.text.isNullOrEmpty() -> {
+                    showToast(activity, include, "Please Enter Password...")
+                }
+
+                etPassword.text.length < 8 -> {
+                    showToast(activity, include, "Password must be of greater than 8 character")
+                }
+
+                etConfirmPassword.text.isNullOrEmpty() -> {
+                    showToast(activity, include, "Please Confirm the Password...")
+                }
+
+                etConfirmPassword.text.toString() != etPassword.text.toString() -> {
+                    showToast(activity, include, "Confirm the Password Properly")
+                }
 
                 else -> {
-//                    setError.text = ""
                     addUserDetails()
                 }
             }
@@ -219,11 +224,11 @@ class SignupActivity : AppCompatActivity() {
 
     }
 
-    private fun showError(message: String, editText: EditText?) {
-//        setError.text = message
-        editText?.error = message
-        editText?.setCompoundDrawablesWithIntrinsicBounds(customErrorDrawable, null, null, null)
-    }
+//    private fun showError(message: String, editText: EditText?) {
+////        setError.text = message
+//        editText?.error = message
+//        editText?.setCompoundDrawablesWithIntrinsicBounds(customErrorDrawable, null, null, null)
+//    }
 
     private fun addUserDetails() {
 //        params = RequestParams().apply {

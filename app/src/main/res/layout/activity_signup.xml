@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
 
+    tools:context=".views.activities.SignupActivity"
     android:background="#37386e">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,13 +14,14 @@
         android:background="#37386e">
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/ivLogo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:scaleType="fitXY"
+            android:layout_marginBottom="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -26,14 +29,14 @@
 
         <ImageView
             android:id="@+id/iv_signup2"
-            android:layout_width="250dp"
+            android:layout_width="wrap_content"
             android:layout_height="250dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-            app:layout_constraintEnd_toEndOf="@+id/imageView7"
-            app:layout_constraintStart_toStartOf="@+id/imageView7"
-            app:layout_constraintTop_toTopOf="@+id/imageView7"
+            app:layout_constraintBottom_toBottomOf="@+id/llSignUpContainerHolder"
+            app:layout_constraintEnd_toEndOf="@+id/llSignUpContainerHolder"
+            app:layout_constraintStart_toStartOf="@+id/llSignUpContainerHolder"
+            app:layout_constraintTop_toTopOf="@+id/llSignUpContainerHolder"
             app:layout_constraintVertical_bias="0.25"
             app:srcCompat="@drawable/ic_signup_logo" />
 
@@ -41,7 +44,7 @@
             android:id="@+id/activity_signup_tv_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView7"
+            android:layout_below="@+id/llSignUpContainerHolder"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
@@ -54,18 +57,17 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView7"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/background_purple_1"
             android:orientation="vertical"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7">
+            app:layout_constraintTop_toBottomOf="@+id/ivLogo">
 
             <EditText
                 android:id="@+id/etName"
@@ -144,12 +146,12 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="9dp"
                     android:layout_weight="1"
-                    android:buttonTint="@color/yellow"
                     android:backgroundTint="@color/white"
+                    android:buttonTint="@color/yellow"
                     android:text="Male"
-                    app:buttonTint="@color/yellow"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:buttonTint="@color/yellow" />
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
                     android:id="@+id/rbFemale"
@@ -158,10 +160,10 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:backgroundTint="@color/white"
-                    app:buttonTint="@color/yellow"
                     android:text="Female"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:buttonTint="@color/yellow" />
             </RadioGroup>
 
             <EditText
@@ -281,18 +283,18 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/mbtnSignup"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
+                android:layout_height="60dp"
+
+                android:layout_marginHorizontal="24dp"
                 android:layout_marginBottom="14dp"
-                android:background="@drawable/background_button"
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
                 android:text="Sign Up"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                app:backgroundTint="@color/colorPrimary" />
+                app:backgroundTint="@color/colorPrimary"
+                app:cornerRadius="18dp"
+                app:rippleColor="@color/gray" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvLogin"
@@ -304,5 +306,26 @@
                 android:textColor="@color/white"
                 android:textSize="14sp" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/ivLogo"
+            app:layout_constraintStart_toStartOf="@+id/ivLogo"
+            app:layout_constraintTop_toBottomOf="@+id/ivLogo">
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/layout_toast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="12dp"
+
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

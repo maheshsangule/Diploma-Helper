@@ -7,6 +7,7 @@ import android.os.CountDownTimer
 import android.preference.PreferenceManager
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.codepath.asynchttpclient.RequestParams
 import com.developermaheshsofttechltd.diplomahelper.R
 import com.developermaheshsofttechltd.diplomahelper.constants.Base
+import com.developermaheshsofttechltd.diplomahelper.constants.Constants.showToast
 import com.developermaheshsofttechltd.diplomahelper.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -59,6 +61,9 @@ class LoginActivity : AppCompatActivity() {
 
         binding.apply {
 
+            include.ibCancel.setOnClickListener {
+                showToast(activity,include, isShowToast = false)
+            }
 
             sheetDialog = BottomSheetDialog(activity, R.style.BottomSheetStyle)
             sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
@@ -111,11 +116,18 @@ class LoginActivity : AppCompatActivity() {
 
             mbtnLogin.setOnClickListener {
                 when {
-                    etEmail.text.toString().isEmpty() ->
-                        etEmail.error = "Username could not be Empty!"
+                    etEmail.text.toString().isEmpty() -> {
+//                        etEmail.error = "Username could not be Empty!"
+//                        include.tvMessage.text = "Username could not be Empty!"
+                        showToast(activity,include,"Username could not be Empty!")
+                    }
 
-                    etPassword.text.toString().isEmpty() ->
-                        etPassword.error = "Password could not be empty"
+
+                    etPassword.text.toString().isEmpty() -> {
+//                        etPassword.error = "Password could not be empty"
+//                        include.tvMessage.text = "Password could not be empty"
+                        showToast(activity,include,"Password could not be empty")
+                    }
 
                     else -> checkLoginUser()
                 }

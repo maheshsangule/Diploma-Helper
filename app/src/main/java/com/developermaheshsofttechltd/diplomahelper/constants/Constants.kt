@@ -1,11 +1,17 @@
 package com.developermaheshsofttechltd.diplomahelper.constants
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.os.Handler
+import android.os.Looper
+import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import com.developermaheshsofttechltd.diplomahelper.R
+import com.developermaheshsofttechltd.diplomahelper.databinding.LayoutToastBinding
 import com.developermaheshsofttechltd.diplomahelper.quiz.CategoryModel
 
 object Constants {
@@ -148,5 +154,37 @@ object Constants {
         for (i in list)
             result.add(i.name)
         return result
+    }
+
+    fun showToast(
+        context: Activity,
+        binding: LayoutToastBinding,
+        tvMessage: String = "Something went wrong",
+        color: Int = R.color.red,
+        isShowToast: Boolean = true
+    ) {
+
+        if(isShowToast)
+        {
+            binding.layoutConstraint.visibility = View.VISIBLE
+            binding.tvMessage.text = tvMessage
+            binding.layoutConstraint.backgroundTintList =
+                ContextCompat.getColorStateList(context, color)
+
+            Handler(Looper.myLooper()!!).postDelayed(
+                {
+                    binding.layoutConstraint.visibility = View.GONE
+                    binding.tvMessage.text = tvMessage
+                }, 3000
+            )
+        }
+        else
+        {
+            binding.layoutConstraint.visibility = View.GONE
+            binding.tvMessage.text = tvMessage
+        }
+
+
+
     }
 }

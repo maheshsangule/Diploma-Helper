@@ -46,10 +46,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="30dp"
-
+            android:layout_marginTop="32dp"
             android:background="@drawable/background_purple_1"
             android:orientation="vertical"
+            android:layout_marginBottom="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView5">
@@ -164,20 +164,17 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/mbtnLogin"
-
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="24dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="-5dp"
-                android:background="@drawable/background_button"
                 android:gravity="center"
-
                 android:text="Login"
+                app:cornerRadius="18dp"
                 android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
+                app:rippleColor="@color/gray"
                 app:backgroundTint="@color/colorPrimary" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -185,12 +182,24 @@
                 android:id="@+id/tvForgotPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="20dp"
                 android:text="Forgot Password"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
         </LinearLayout>
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
