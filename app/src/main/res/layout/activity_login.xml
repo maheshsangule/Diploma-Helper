@@ -13,7 +13,7 @@
         android:background="#37386e">
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/ivLogoLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/logo_background"
@@ -27,16 +27,16 @@
             android:src="@drawable/back_3" />
 
         <ImageView
-            android:id="@+id/imageView50"
+            android:id="@+id/ivLogoLogin0"
             android:layout_width="wrap_content"
             android:layout_height="250dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintBottom_toBottomOf="@+id/ivLogoLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/imageView5"
+            app:layout_constraintStart_toStartOf="@+id/ivLogoLogin"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.28"
             app:srcCompat="@drawable/ic_login_logo" />
@@ -47,14 +47,16 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="32dp"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/background_purple_1"
             android:orientation="vertical"
-            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5">
+            app:layout_constraintTop_toBottomOf="@+id/ivLogoLogin">
 
             <EditText
+                android:drawablePadding="8dp"
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="57dp"
@@ -62,19 +64,19 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
                 android:autofillHints="emailAddress"
+                android:fontFamily="@font/madmione"
+
                 android:background="@drawable/background_edittext"
                 android:defaultFocusHighlightEnabled="false"
                 android:drawableStart="@drawable/ic_email"
-                android:drawablePadding="16dp"
+                android:paddingHorizontal="16dp"
                 android:hint="Email"
                 android:importantForAutofill="auto"
                 android:inputType="textEmailAddress"
-                android:padding="16dp"
                 android:text="maheshsangule5@gmail.com"
                 android:textColor="@color/white"
-                android:textColorHighlight="@color/red"
-                android:textColorHint="@color/white"
-                android:textSelectHandleRight="@color/red"
+                android:textColorHint="#CCF3F3F3"
+                android:textSelectHandle="@color/red"
                 android:textSize="18dp" />
 
             <LinearLayout
@@ -93,14 +95,18 @@
                     android:background="@drawable/background_edittext"
                     android:drawableStart="@drawable/ic_lock"
                     android:drawableRight="@drawable/eye_of"
-                    android:drawablePadding="16dp"
+                    android:layout_marginEnd="30dp"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/madmione"
+                    android:paddingHorizontal="16dp"
                     android:ems="10"
                     android:hint="Password"
-                    android:text="mahesh13185198#"
                     android:inputType="textPassword"
-                    android:padding="16dp"
+                    android:shadowColor="@color/colorPrimary50"
+                    android:textColorHighlight="@color/red"
                     android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColorHint="@color/gray"
+                    android:textSelectHandle="@color/red"
                     android:textSize="18dp" />
 
                 <ImageView
@@ -116,7 +122,7 @@
             <!--                android:id="@+id/activity_login_tv_error"-->
             <!--                android:layout_width="wrap_content"-->
             <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_below="@+id/imageView5"-->
+            <!--                android:layout_below="@+id/ivLogoLogin"-->
             <!--                android:layout_centerHorizontal="true"-->
             <!--                android:layout_gravity="center"-->
             <!--                android:text=""-->
@@ -158,6 +164,7 @@
                 android:layout_height="wrap_content"
                 android:text="Are you new user? Signup"
                 android:textAlignment="center"
+                android:fontFamily="@font/josefinsans_bold"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -166,23 +173,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginHorizontal="24dp"
-                android:fontFamily="@font/poppins_bold"
-                android:textSize="18sp"
                 android:layout_marginTop="6dp"
+                android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
                 android:text="Login"
-                app:cornerRadius="18dp"
                 android:textColor="@color/white"
-                app:rippleColor="@color/gray"
-                app:backgroundTint="@color/colorPrimary" />
+                android:textSize="18sp"
+                app:backgroundTint="@color/colorPrimary"
+                app:cornerRadius="18dp"
+                app:rippleColor="@color/gray" />
 
             <com.google.android.material.textview.MaterialTextView
 
                 android:id="@+id/tvForgotPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="12dp"
                 android:text="Forgot Password"
+                android:fontFamily="@font/josefinsans_bold"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
@@ -194,10 +202,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-            app:layout_constraintTop_toBottomOf="@id/linearLayout2" />
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/ivLogoLogin"
+            app:layout_constraintStart_toStartOf="@+id/ivLogoLogin"
+            app:layout_constraintTop_toBottomOf="@+id/ivLogoLogin" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

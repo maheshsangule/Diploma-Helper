@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".views.activities.MultipleLoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        android:paddingBottom="30dp">
+        android:paddingBottom="10dp">
 
         <ImageView
             android:id="@+id/imageView4"
@@ -27,16 +28,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="-10dp"
-            android:rotationX="360"
             android:text="Welcome Back,\nto Your App"
             android:textColor="@color/white"
+            android:layout_marginTop="12dp"
             android:textSize="32sp"
             android:textStyle="bold"
             app:fontFamily="@font/akronim"
             app:layout_constraintEnd_toEndOf="@+id/imageView4"
             app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            tools:ignore="HardcodedText" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textView9"
@@ -46,6 +47,7 @@
             android:text="Connecting Engineer&apos;s\nTogether"
             android:textAlignment="center"
             android:textColor="@color/yellow"
+            android:layout_marginTop="12dp"
             android:textIsSelectable="false"
             android:textSize="38sp"
             app:fontFamily="@font/akronim"
@@ -58,7 +60,7 @@
             android:id="@+id/activity_start2_iv1"
             android:layout_width="250dp"
             android:layout_height="200dp"
-            android:layout_marginTop="-50dp"
+            android:layout_marginTop="-10dp"
             android:background="@drawable/ic_welcome2_logo"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"

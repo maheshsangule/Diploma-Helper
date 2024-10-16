@@ -7,7 +7,6 @@ import android.os.CountDownTimer
 import android.preference.PreferenceManager
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
-import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -89,13 +88,22 @@ class LoginActivity : AppCompatActivity() {
 //        gsc = GoogleSignIn.getClient(activity, gso)
 
             etEyePassword.setOnClickListener {
-                if (etPassword.transformationMethod == HideReturnsTransformationMethod.getInstance()) {
-                    etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
-                    etEyePassword.setImageResource(R.drawable.ic_eye_visible)
-                } else {
-                    etPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
-                    etEyePassword.setImageResource(R.drawable.ic_eye_invisible)
+                val selection = etPassword.text.length
+                if(etPassword.text.isNotEmpty())
+                {
+                    if (etPassword.transformationMethod == HideReturnsTransformationMethod.getInstance()) {
+                        etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+                        etEyePassword.setImageResource(R.drawable.ic_eye_visible)
+                        etPassword.letterSpacing = "-0.2".toFloat()
+                    } else {
+                        etPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                        etEyePassword.setImageResource(R.drawable.ic_eye_invisible)
+                        etPassword.letterSpacing = "0".toFloat()
+
+                    }
                 }
+
+                etPassword.setSelection(selection)
             }
 
             ivFacebookLogin.setOnClickListener {
