@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
 
-    tools:context=".views.activities.SignupActivity"
-    android:background="#37386e">
+    android:background="#37386e"
+    tools:context=".views.activities.SignupActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,8 +20,8 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:scaleType="fitXY"
             android:layout_marginBottom="32dp"
+            android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -30,37 +30,37 @@
         <ImageView
             android:id="@+id/iv_signup2"
             android:layout_width="wrap_content"
-            android:layout_height="250dp"
+            android:layout_height="230dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            app:layout_constraintBottom_toBottomOf="@+id/llSignUpContainerHolder"
-            app:layout_constraintEnd_toEndOf="@+id/llSignUpContainerHolder"
-            app:layout_constraintStart_toStartOf="@+id/llSignUpContainerHolder"
-            app:layout_constraintTop_toTopOf="@+id/llSignUpContainerHolder"
-            app:layout_constraintVertical_bias="0.25"
+
+            app:layout_constraintBottom_toBottomOf="@+id/ivLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_signup_logo" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/activity_signup_tv_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/llSignUpContainerHolder"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:text=""
             android:textAlignment="center"
             android:textColor="@color/yellow"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
 
         <LinearLayout
-
+            android:id="@+id/llSignUpContainerHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="12dp"
             android:layout_marginTop="32dp"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/background_purple_1"
             android:orientation="vertical"
             android:visibility="visible"
@@ -307,25 +307,18 @@
                 android:textSize="14sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/ll"
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toast"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintEnd_toEndOf="@+id/ivLogo"
             app:layout_constraintStart_toStartOf="@+id/ivLogo"
-            app:layout_constraintTop_toBottomOf="@+id/ivLogo">
-
-            <include
-                android:id="@+id/include"
-                layout="@layout/layout_toast"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="32dp"
-                android:layout_marginTop="12dp"
-
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent" />
-        </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

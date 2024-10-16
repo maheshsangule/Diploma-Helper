@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".views.activities.MultipleLoginActivity"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.activities.MultipleLoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        android:paddingBottom="30dp">
 
         <ImageView
             android:id="@+id/imageView4"
@@ -17,15 +18,16 @@
             android:layout_height="250dp"
             android:scaleType="fitEnd"
             android:src="@drawable/ic_welcome_logo"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="-10dp"
             android:rotationX="360"
             android:text="Welcome Back,\nto Your App"
             android:textColor="@color/white"
@@ -40,7 +42,6 @@
             android:id="@+id/textView9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:fontFamily="@font/josefinsans_bold"
             android:text="Connecting Engineer&apos;s\nTogether"
             android:textAlignment="center"
@@ -57,8 +58,9 @@
             android:id="@+id/activity_start2_iv1"
             android:layout_width="250dp"
             android:layout_height="200dp"
+            android:layout_marginTop="-50dp"
             android:background="@drawable/ic_welcome2_logo"
-            android:scaleType="fitXY"
+            android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9"
             app:tint="@color/black" />
@@ -68,7 +70,6 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginHorizontal="20dp"
-            app:cornerRadius="18dp"
             android:layout_marginVertical="4dp"
             android:fontFamily="@font/poppins_bold"
             android:paddingStart="20dp"
@@ -78,13 +79,15 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:backgroundTint="#CCDCDCF2"
-            app:rippleColor="@color/gray"            app:icon="@drawable/login_icon_1"
+            app:cornerRadius="18dp"
+            app:icon="@drawable/login_icon_1"
             app:iconPadding="10dp"
             app:iconSize="28dp"
             app:iconTint="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_start2_iv1" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_start2_iv1"
+            app:rippleColor="@color/gray" />
 
 
         <com.google.android.material.button.MaterialButton
@@ -92,27 +95,27 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="20dp"
-            app:cornerRadius="18dp"
             android:layout_marginVertical="4dp"
-
             android:drawableTint="@color/colorPrimary"
+
             android:fontFamily="@font/poppins_bold"
             android:paddingStart="20dp"
-            android:textColor="@color/black"
             android:paddingEnd="30dp"
             android:text="SignUp"
             android:textAlignment="textStart"
+            android:textColor="@color/black"
             android:textSize="18sp"
-            app:backgroundTint="#CCDCDCF2"
             android:textStyle="bold"
-            app:rippleColor="@color/gray"
+            app:backgroundTint="#CCDCDCF2"
+            app:cornerRadius="18dp"
             app:icon="@drawable/signup_icon_2"
             app:iconPadding="10dp"
             app:iconSize="28dp"
             app:iconTint="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/tvLogin"
+            app:rippleColor="@color/gray" />
 
 
         <com.google.android.material.button.MaterialButton
@@ -120,18 +123,17 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="20dp"
-            app:cornerRadius="18dp"
             android:layout_marginVertical="4dp"
-            android:textColor="@color/black"
-
             android:fontFamily="@font/poppins_bold"
             android:paddingStart="20dp"
+
             android:text="Continue with phone"
             android:textAlignment="textStart"
+            android:textColor="@color/black"
             android:textSize="18sp"
-            app:backgroundTint="#CCDCDCF2"
             android:textStyle="bold"
-            app:rippleColor="@color/gray"
+            app:backgroundTint="#CCDCDCF2"
+            app:cornerRadius="18dp"
             app:icon="@drawable/smartphone_icon"
             app:iconPadding="10dp"
             app:iconSize="28dp"
@@ -139,7 +141,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSignup" />
+            app:layout_constraintTop_toBottomOf="@+id/tvSignup"
+            app:rippleColor="@color/gray" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

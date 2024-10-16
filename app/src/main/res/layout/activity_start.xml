@@ -39,14 +39,14 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
 
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/akronim"
         android:text="Welcome to\nDiploma Helper"
         android:textColor="@color/white"
         android:textSize="45dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
